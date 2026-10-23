@@ -1,0 +1,1013 @@
+
+/* =========================================
+   PEARLP SAFARIS — UGANDA SAFARIS PAGE
+   Forest green / ivory / muted gold
+========================================= */
+
+.uganda-safaris-page {
+  --safari-green: #183c2e;
+  --safari-green-deep: #102b21;
+  --safari-green-light: #315744;
+  --safari-gold: #c8a96a;
+  --safari-gold-light: #e4cf9c;
+  --safari-ivory: #f7f5ef;
+  --safari-white: #ffffff;
+  --safari-text: #26372e;
+  --safari-muted: #70796f;
+
+  color: var(--safari-text);
+  background: var(--safari-ivory);
+  overflow: hidden;
+}
+
+.uganda-safaris-page *,
+.uganda-safaris-page *::before,
+.uganda-safaris-page *::after {
+  box-sizing: border-box;
+}
+
+.uganda-safaris-page img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.uganda-safaris-page a {
+  text-decoration: none;
+}
+
+.uganda-safaris-page .page-container {
+  width: min(1200px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+.uganda-safaris-page .section-space {
+  padding-block: 108px;
+}
+
+.safaris-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--safari-gold-light);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.3px;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.safaris-eyebrow-line {
+  width: 30px;
+  height: 1px;
+  background: var(--safari-gold);
+}
+
+.safaris-eyebrow-dark {
+  color: #7c6740;
+}
+
+.safaris-hero {
+  position: relative;
+  display: flex;
+  min-height: 690px;
+  min-height: min(790px, 88svh);
+  align-items: stretch;
+  isolation: isolate;
+  color: var(--safari-white);
+  background: var(--safari-green-deep);
+}
+
+.safaris-hero-image,
+.safaris-hero-overlay {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+}
+
+.safaris-hero-image img {
+  object-position: center 48%;
+}
+
+.safaris-hero-overlay {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 25, 18, 0.91) 0%,
+      rgba(8, 25, 18, 0.77) 42%,
+      rgba(8, 25, 18, 0.25) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(8, 25, 18, 0.5) 0%,
+      transparent 45%
+    );
+}
+
+.safaris-hero-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: 110px 70px;
+}
+
+.safaris-hero-content {
+  width: min(760px, 100%);
+}
+
+.safaris-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 38px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+}
+
+.safaris-breadcrumb a {
+  color: var(--safari-white);
+  transition: color 0.2s ease;
+}
+
+.safaris-breadcrumb a:hover {
+  color: var(--safari-gold-light);
+}
+
+.safaris-hero h1,
+.safaris-final-content h2 {
+  margin: 22px 0 23px;
+  color: var(--safari-white);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(43px, 6.1vw, 78px);
+  font-weight: 400;
+  letter-spacing: -2.6px;
+  line-height: 1.08;
+}
+
+.safaris-hero h1 em,
+.safaris-final-content h2 em,
+.safaris-intro h2 em,
+.safaris-section-heading h2 em,
+.safaris-services-heading h2 em,
+.safaris-highlights-content h2 em {
+  color: var(--safari-gold);
+  font-weight: 400;
+}
+
+.safaris-hero-content > p {
+  max-width: 590px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.81);
+  font-size: 15px;
+  line-height: 1.95;
+}
+
+.safaris-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 34px;
+}
+
+.safaris-btn {
+  display: inline-flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 14px 20px;
+  border: 1px solid transparent;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.25px;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.safaris-btn:hover {
+  transform: translateY(-2px);
+}
+
+.safaris-btn-gold {
+  color: #192b20;
+  background: var(--safari-gold);
+}
+
+.safaris-btn-gold:hover {
+  background: var(--safari-gold-light);
+}
+
+.safaris-btn-outline {
+  color: var(--safari-white);
+  border-color: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.safaris-btn-outline:hover {
+  border-color: var(--safari-gold);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.safaris-scroll-link {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 12px;
+  margin-top: 48px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+
+.safaris-scroll-icon {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  color: var(--safari-gold-light);
+}
+
+.safaris-hero-caption {
+  position: absolute;
+  right: 0;
+  bottom: 38px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 10px;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+}
+
+.safaris-caption-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--safari-gold);
+}
+
+/* Introduction */
+
+.safaris-intro {
+  background: var(--safari-ivory);
+}
+
+.safaris-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.92fr;
+  align-items: start;
+  gap: 90px;
+}
+
+.safaris-intro h2,
+.safaris-section-heading h2,
+.safaris-services-heading h2,
+.safaris-highlights-content h2 {
+  margin: 22px 0 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(36px, 4.2vw, 53px);
+  font-weight: 400;
+  letter-spacing: -1.6px;
+  line-height: 1.15;
+}
+
+.safaris-intro h2 em,
+.safaris-section-heading h2 em,
+.safaris-highlights-content h2 em {
+  color: var(--safari-green-light);
+}
+
+.safaris-intro-copy {
+  padding-top: 10px;
+}
+
+.safaris-intro-copy p,
+.safaris-section-heading > p,
+.safaris-services-heading > p,
+.safaris-highlights-lead {
+  margin: 0 0 19px;
+  color: #667067;
+  font-size: 14px;
+  line-height: 1.95;
+}
+
+.safaris-text-link {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+  color: var(--safari-green);
+  font-size: 12px;
+  font-weight: 700;
+  transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.safaris-text-link:hover {
+  gap: 17px;
+  color: #8a6b36;
+}
+
+/* Experiences */
+
+.safaris-experiences {
+  background: #eeece4;
+}
+
+.safaris-section-heading {
+  display: grid;
+  grid-template-columns: 1.1fr 0.7fr;
+  align-items: end;
+  gap: 60px;
+  margin-bottom: 48px;
+}
+
+.safaris-section-heading > p {
+  max-width: 440px;
+  margin: 0 0 5px;
+}
+
+.safaris-experience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.safaris-experience-card {
+  min-width: 0;
+  overflow: hidden;
+  background: #fbfaf6;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.safaris-experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(22, 48, 35, 0.1);
+}
+
+.safaris-experience-image {
+  position: relative;
+  display: block;
+  height: 245px;
+  overflow: hidden;
+  background: #d4d8cd;
+}
+
+.safaris-experience-image img {
+  transition: transform 0.7s cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+
+.safaris-experience-card:hover .safaris-experience-image img {
+  transform: scale(1.055);
+}
+
+.safaris-experience-image::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 25, 17, 0.16),
+    transparent 36%,
+    rgba(10, 25, 17, 0.12)
+  );
+  content: "";
+  pointer-events: none;
+}
+
+.safaris-card-number {
+  position: absolute;
+  z-index: 1;
+  top: 16px;
+  left: 16px;
+  display: grid;
+  width: 35px;
+  height: 35px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: var(--safari-white);
+  background: rgba(15, 38, 27, 0.4);
+  font-size: 10px;
+  letter-spacing: 0.6px;
+}
+
+.safaris-card-arrow {
+  position: absolute;
+  z-index: 1;
+  right: 15px;
+  bottom: 15px;
+  display: grid;
+  width: 39px;
+  height: 39px;
+  place-items: center;
+  color: var(--safari-green-deep);
+  background: var(--safari-gold-light);
+  transition: transform 0.25s ease;
+}
+
+.safaris-experience-card:hover .safaris-card-arrow {
+  transform: rotate(45deg);
+}
+
+.safaris-experience-content {
+  padding: 24px 23px 25px;
+}
+
+.safaris-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 16px;
+  color: #7d704f;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.safaris-card-icon {
+  display: grid;
+  width: 27px;
+  height: 27px;
+  place-items: center;
+  color: var(--safari-green);
+  background: #e9e9dc;
+}
+
+.safaris-experience-content h3 {
+  margin: 0 0 11px;
+  color: var(--safari-green-deep);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.safaris-experience-content h3 a {
+  color: inherit;
+}
+
+.safaris-card-location {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 15px;
+  color: #7c8177;
+  font-size: 11px;
+}
+
+.safaris-card-location svg {
+  flex-shrink: 0;
+  color: #a2864d;
+}
+
+.safaris-experience-content > p {
+  min-height: 91px;
+  margin: 0;
+  color: #687167;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.safaris-card-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 21px;
+  padding-top: 16px;
+  border-top: 1px solid #e7e5dc;
+  color: var(--safari-green);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.safaris-card-link svg {
+  transition: transform 0.2s ease;
+}
+
+.safaris-card-link:hover svg {
+  transform: translateX(4px);
+}
+
+.safaris-grid-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 38px;
+  padding-top: 25px;
+  border-top: 1px solid #d9d8cf;
+}
+
+.safaris-grid-footer p {
+  margin: 0;
+  color: #677066;
+  font-size: 13px;
+}
+
+/* Services */
+
+.safaris-services {
+  color: var(--safari-white);
+  background: var(--safari-green-deep);
+}
+
+.safaris-services-heading {
+  max-width: 730px;
+  margin-bottom: 45px;
+}
+
+.safaris-services-heading h2 {
+  color: var(--safari-white);
+}
+
+.safaris-services-heading > p {
+  max-width: 620px;
+  margin-top: 22px;
+  color: rgba(255, 255, 255, 0.69);
+}
+
+.safaris-services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.safaris-service-card {
+  display: flex;
+  min-height: 290px;
+  flex-direction: column;
+  padding: 25px 22px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.035);
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.safaris-service-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(200, 169, 106, 0.65);
+  background: rgba(255, 255, 255, 0.065);
+}
+
+.safaris-service-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 27px;
+}
+
+.safaris-service-icon {
+  display: grid;
+  width: 47px;
+  height: 47px;
+  place-items: center;
+  color: var(--safari-gold-light);
+  border: 1px solid rgba(200, 169, 106, 0.45);
+}
+
+.safaris-service-number {
+  color: rgba(255, 255, 255, 0.38);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+}
+
+.safaris-service-card h3 {
+  margin: 0 0 13px;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.safaris-service-card > p {
+  flex: 1;
+  margin: 0 0 22px;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.safaris-service-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  color: var(--safari-gold-light);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.safaris-service-link svg {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.safaris-service-link:hover svg {
+  transform: translate(3px, -3px);
+}
+
+.safaris-services-note {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 27px;
+  padding: 19px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.safaris-note-icon {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  place-items: center;
+  color: var(--safari-gold-light);
+}
+
+.safaris-services-note p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.safaris-services-note a {
+  color: var(--safari-gold-light);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Highlights */
+
+.safaris-highlights {
+  background: var(--safari-ivory);
+}
+
+.safaris-highlights-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1fr;
+  align-items: center;
+  gap: 90px;
+}
+
+.safaris-highlights-visual {
+  position: relative;
+  min-height: 590px;
+  background: #d2d8cb;
+}
+
+.safaris-highlights-visual img {
+  position: absolute;
+  inset: 0;
+}
+
+.safaris-highlights-visual::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(9, 29, 20, 0.7),
+    transparent 48%
+  );
+  content: "";
+}
+
+.safaris-visual-label {
+  position: absolute;
+  z-index: 1;
+  right: 25px;
+  bottom: 25px;
+  left: 25px;
+  color: var(--safari-white);
+}
+
+.safaris-visual-label > span {
+  color: var(--safari-gold-light);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.7px;
+}
+
+.safaris-visual-label p {
+  margin: 10px 0 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 25px;
+}
+
+.safaris-highlights-content h2 {
+  margin-bottom: 22px;
+}
+
+.safaris-highlights-lead {
+  margin-bottom: 29px;
+}
+
+.safaris-highlight-list {
+  margin-bottom: 24px;
+}
+
+.safaris-highlight-item {
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  gap: 16px;
+  padding: 21px 0;
+  border-top: 1px solid #deded4;
+}
+
+.safaris-highlight-number {
+  padding-top: 3px;
+  color: #9b7c43;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+}
+
+.safaris-highlight-item h3 {
+  margin: 0 0 7px;
+  color: var(--safari-green-deep);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.safaris-highlight-item p {
+  margin: 0;
+  color: #6c756b;
+  font-size: 12px;
+  line-height: 1.85;
+}
+
+/* Final call to action */
+
+.safaris-final-cta {
+  position: relative;
+  display: flex;
+  min-height: 500px;
+  align-items: center;
+  isolation: isolate;
+  color: var(--safari-white);
+  background: var(--safari-green-deep);
+}
+
+.safaris-final-image,
+.safaris-final-overlay {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+}
+
+.safaris-final-image img {
+  object-position: center 54%;
+}
+
+.safaris-final-overlay {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(9, 28, 19, 0.92),
+      rgba(9, 28, 19, 0.64) 58%,
+      rgba(9, 28, 19, 0.36)
+    ),
+    linear-gradient(0deg, rgba(9, 28, 19, 0.2), rgba(9, 28, 19, 0.2));
+}
+
+.safaris-final-content {
+  padding-block: 90px;
+}
+
+.safaris-final-content h2 {
+  max-width: 900px;
+  margin-top: 23px;
+  font-size: clamp(39px, 5.4vw, 67px);
+}
+
+.safaris-final-content > p {
+  max-width: 560px;
+  color: rgba(255, 255, 255, 0.77);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* Responsive layouts */
+
+@media (max-width: 1050px) {
+  .uganda-safaris-page .page-container {
+    width: min(100% - 48px, 900px);
+  }
+
+  .uganda-safaris-page .section-space {
+    padding-block: 82px;
+  }
+
+  .safaris-intro-grid,
+  .safaris-highlights-grid {
+    gap: 48px;
+  }
+
+  .safaris-experience-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .safaris-services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .safaris-service-card {
+    min-height: 255px;
+  }
+
+  .safaris-highlights-visual {
+    min-height: 520px;
+  }
+}
+
+@media (max-width: 700px) {
+  .uganda-safaris-page .page-container {
+    width: calc(100% - 36px);
+  }
+
+  .uganda-safaris-page .section-space {
+    padding-block: 65px;
+  }
+
+  .safaris-hero {
+    min-height: 720px;
+    min-height: 88svh;
+  }
+
+  .safaris-hero-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(8, 25, 18, 0.83),
+        rgba(8, 25, 18, 0.52)
+      ),
+      linear-gradient(
+        0deg,
+        rgba(8, 25, 18, 0.5),
+        transparent 75%
+      );
+  }
+
+  .safaris-hero-image img {
+    object-position: 58% center;
+  }
+
+  .safaris-hero-inner {
+    padding-block: 100px 76px;
+  }
+
+  .safaris-breadcrumb {
+    margin-bottom: 29px;
+  }
+
+  .safaris-hero h1 {
+    margin-block: 19px;
+    font-size: clamp(43px, 10vw, 61px);
+    letter-spacing: -1.7px;
+  }
+
+  .safaris-hero-content > p {
+    font-size: 13px;
+    line-height: 1.85;
+  }
+
+  .safaris-hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .safaris-btn {
+    width: 100%;
+  }
+
+  .safaris-scroll-link {
+    margin-top: 30px;
+  }
+
+  .safaris-hero-caption {
+    right: 0;
+    bottom: 25px;
+    font-size: 9px;
+  }
+
+  .safaris-intro-grid,
+  .safaris-section-heading,
+  .safaris-highlights-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .safaris-intro h2,
+  .safaris-section-heading h2,
+  .safaris-services-heading h2,
+  .safaris-highlights-content h2 {
+    font-size: clamp(35px, 8.4vw, 47px);
+  }
+
+  .safaris-section-heading {
+    margin-bottom: 30px;
+  }
+
+  .safaris-experience-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .safaris-experience-image {
+    height: 250px;
+  }
+
+  .safaris-experience-content > p {
+    min-height: 0;
+  }
+
+  .safaris-experience-content {
+    padding: 22px 20px;
+  }
+
+  .safaris-grid-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .safaris-services-heading {
+    margin-bottom: 30px;
+  }
+
+  .safaris-services-grid {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .safaris-service-card {
+    min-height: 0;
+    padding: 22px 20px;
+  }
+
+  .safaris-service-top {
+    margin-bottom: 20px;
+  }
+
+  .safaris-service-card > p {
+    margin-bottom: 20px;
+  }
+
+  .safaris-services-note {
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .safaris-highlights-visual {
+    min-height: 430px;
+  }
+
+  .safaris-highlights-content {
+    padding-top: 12px;
+  }
+
+  .safaris-final-cta {
+    min-height: 500px;
+  }
+
+  .safaris-final-content {
+    padding-block: 70px;
+  }
+
+  .safaris-final-content h2 {
+    font-size: clamp(38px, 8.5vw, 52px);
+    letter-spacing: -1.5px;
+  }
+
+  .safaris-final-content > p {
+    font-size: 13px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .uganda-safaris-page *,
+  .uganda-safaris-page *::before,
+  .uganda-safaris-page *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,1129 @@
+
+/* =========================================
+   PEARLP SAFARIS — CAR HIRE & TRANSFERS
+========================================= */
+
+.car-hire-page {
+  overflow: hidden;
+  background: var(--color-ivory);
+  color: var(--color-text);
+}
+
+.car-hire-page * {
+  box-sizing: border-box;
+}
+
+.car-hire-page a {
+  text-decoration: none;
+}
+
+.car-hire-page .eyebrow,
+.car-hire-page .eyebrow-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.19em;
+  line-height: 1.7;
+}
+
+.car-hire-page .eyebrow {
+  color: var(--color-gold-light);
+}
+
+.car-hire-page .eyebrow-dark {
+  color: #7a6845;
+}
+
+.car-hire-page .section-heading {
+  margin: 18px 0 0;
+  color: var(--color-forest);
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 4.3vw, 4.1rem);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 1.08;
+}
+
+.car-hire-page .section-heading em {
+  color: var(--color-gold);
+  font-weight: 400;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.car-hire-hero {
+  position: relative;
+  display: flex;
+  min-height: min(780px, 88svh);
+  align-items: stretch;
+  overflow: hidden;
+  background: var(--color-forest-dark);
+  color: var(--color-white);
+}
+
+.car-hire-hero-image,
+.car-hire-hero-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.car-hire-hero-image {
+  background-image: url("https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=2200&q=90");
+  background-position: center 52%;
+  background-size: cover;
+  transform: scale(1.015);
+  animation: carHireHeroReveal 1.2s ease-out both;
+}
+
+.car-hire-hero-overlay {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(11, 29, 21, 0.94) 0%,
+      rgba(11, 29, 21, 0.78) 42%,
+      rgba(11, 29, 21, 0.25) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(11, 29, 21, 0.65) 0%,
+      transparent 34%,
+      rgba(11, 29, 21, 0.12) 100%
+    );
+}
+
+.car-hire-hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  max-width: 1240px;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 30px 6% 29px;
+}
+
+.car-hire-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.76rem;
+}
+
+.car-hire-breadcrumb a {
+  color: #fff;
+  transition: color 180ms ease;
+}
+
+.car-hire-breadcrumb a:hover {
+  color: var(--color-gold-light);
+}
+
+.car-hire-hero-copy {
+  width: min(740px, 100%);
+  margin-right: auto;
+  padding: 72px 0 80px;
+  text-align: left;
+}
+
+.car-hire-hero-copy .eyebrow {
+  color: #fff;
+}
+
+.car-hire-eyebrow-line {
+  width: 30px;
+  height: 1px;
+  background: var(--color-gold);
+}
+
+.car-hire-hero h1 {
+  margin: 23px 0 22px;
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: clamp(3.5rem, 7.3vw, 6.8rem);
+  font-weight: 500;
+  letter-spacing: -0.065em;
+  line-height: 0.99;
+}
+
+.car-hire-hero h1 em {
+  color: #fff;
+  font-weight: 400;
+}
+
+.car-hire-hero-copy > p {
+  max-width: 555px;
+  margin: 0;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.car-hire-hero-actions,
+.car-hire-final-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+  margin-top: 33px;
+}
+
+.car-hire-primary-button {
+  display: inline-flex;
+  min-height: 54px;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  padding: 0 23px;
+  border: 1px solid var(--color-gold);
+  border-radius: 0;
+  font-size: 0.82rem;
+  font-weight: 700;
+  transition:
+    background 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.car-hire-primary-button:hover {
+  transform: translateY(-2px);
+  background: var(--color-gold-light);
+  color: var(--color-forest-dark);
+}
+
+.car-hire-text-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  transition: color 180ms ease;
+}
+
+.car-hire-text-button:hover {
+  color: var(--color-gold-light);
+}
+
+.car-hire-hero-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 17px;
+  color: #fff;
+  font-size: 0.75rem;
+  letter-spacing: 0.035em;
+}
+
+.car-hire-hero-bottom > span:first-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.car-hire-hero-bottom > span:first-child svg {
+  color: var(--color-gold-light);
+}
+
+.car-hire-hero-bottom-divider {
+  width: 28px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.65);
+}
+
+/* =========================================
+   INTRO
+========================================= */
+
+.car-hire-intro {
+  background: var(--color-ivory);
+}
+
+.car-hire-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.92fr;
+  gap: clamp(45px, 9vw, 130px);
+  align-items: start;
+}
+
+.car-hire-intro-copy {
+  padding-top: 14px;
+}
+
+.car-hire-intro-copy p,
+.car-hire-planning-copy > p {
+  margin: 0 0 20px;
+  color: var(--color-muted);
+  font-size: 0.94rem;
+  line-height: 1.95;
+}
+
+.car-hire-intro-copy .text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+  color: var(--color-forest);
+  font-size: 0.83rem;
+  font-weight: 700;
+}
+
+.car-hire-intro-copy .text-link svg {
+  color: #9e824c;
+  transition: transform 180ms ease;
+}
+
+.car-hire-intro-copy .text-link:hover svg {
+  transform: translateX(4px);
+}
+
+/* =========================================
+   TRANSPORT SERVICE CARDS
+========================================= */
+
+.car-hire-services {
+  background: #f0eee5;
+}
+
+.car-hire-section-top {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 45px;
+  margin-bottom: 43px;
+}
+
+.car-hire-section-top > p {
+  max-width: 430px;
+  margin: 0 0 4px;
+  color: var(--color-muted);
+  font-size: 0.91rem;
+  line-height: 1.85;
+}
+
+.car-hire-service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 23px;
+}
+
+.car-hire-service-card {
+  min-width: 0;
+  background: var(--color-ivory);
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.car-hire-service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 45px rgba(24, 47, 34, 0.09);
+}
+
+.car-hire-service-image-wrap {
+  position: relative;
+  height: 245px;
+  overflow: hidden;
+  background: #d5d9cf;
+}
+
+.car-hire-service-image-wrap::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(14, 37, 25, 0.28), transparent 60%);
+  content: "";
+}
+
+.car-hire-service-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms ease;
+}
+
+.car-hire-service-card:hover .car-hire-service-image-wrap img {
+  transform: scale(1.055);
+}
+
+.car-hire-service-number {
+  position: absolute;
+  z-index: 1;
+  right: 18px;
+  bottom: 16px;
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+.car-hire-service-body {
+  padding: 28px 25px 26px;
+}
+
+.car-hire-service-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.car-hire-service-icon,
+.car-hire-need-icon {
+  display: inline-flex;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  align-items: center;
+  justify-content: center;
+  background: #e9e7db;
+  color: var(--color-forest);
+}
+
+.car-hire-service-title-row h3 {
+  margin: 0;
+  color: var(--color-forest);
+  font-family: var(--font-heading);
+  font-size: 1.48rem;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+
+.car-hire-service-body > p {
+  min-height: 104px;
+  margin: 19px 0;
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  line-height: 1.8;
+}
+
+.car-hire-service-body ul {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0 0 23px;
+  border-bottom: 1px solid var(--color-border);
+  list-style: none;
+}
+
+.car-hire-service-body li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  color: #526057;
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+
+.car-hire-service-body li svg {
+  flex: 0 0 auto;
+  margin-top: 2px;
+  color: #8b794e;
+}
+
+.car-hire-card-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 20px;
+  color: var(--color-forest);
+  font-size: 0.79rem;
+  font-weight: 700;
+}
+
+.car-hire-card-link svg {
+  flex: 0 0 auto;
+  color: #9e824c;
+  transition: transform 180ms ease;
+}
+
+.car-hire-card-link:hover svg {
+  transform: translateX(4px);
+}
+
+/* =========================================
+   THE ROAD TO SOMETHING EXTRAORDINARY
+   All copy in this section is white.
+========================================= */
+
+.car-hire-image-break {
+  position: relative;
+  min-height: 530px;
+  overflow: hidden;
+  background: var(--color-forest-dark);
+  color: #fff;
+}
+
+.car-hire-image-break-photo,
+.car-hire-image-break-shade {
+  position: absolute;
+  inset: 0;
+}
+
+.car-hire-image-break-photo {
+  background-image: url("https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=2200&q=85");
+  background-position: center 55%;
+  background-size: cover;
+}
+
+.car-hire-image-break-shade {
+  background: linear-gradient(
+    90deg,
+    rgba(12, 32, 22, 0.91) 0%,
+    rgba(12, 32, 22, 0.69) 48%,
+    rgba(12, 32, 22, 0.1) 100%
+  );
+}
+
+.car-hire-image-break-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1240px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 105px 6%;
+  text-align: left;
+}
+
+.car-hire-image-break-content .eyebrow {
+  color: #fff;
+}
+
+.car-hire-image-break h2 {
+  margin: 21px 0;
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: clamp(3.1rem, 6.3vw, 5.5rem);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 1;
+}
+
+.car-hire-image-break h2 em {
+  color: #fff;
+  font-weight: 400;
+}
+
+.car-hire-image-break-content > p {
+  max-width: 500px;
+  margin: 0;
+  color: #fff;
+  font-size: 0.94rem;
+  line-height: 1.9;
+}
+
+.car-hire-image-break .button {
+  margin-top: 27px;
+}
+
+/* =========================================
+   TRAVEL NEEDS
+========================================= */
+
+.car-hire-needs {
+  background: var(--color-ivory);
+}
+
+.car-hire-centered-heading {
+  max-width: 760px;
+  margin: 0 auto 52px;
+  text-align: center;
+}
+
+.car-hire-centered-heading .section-heading {
+  font-size: clamp(2.25rem, 4.1vw, 3.7rem);
+}
+
+.car-hire-centered-heading > p {
+  max-width: 590px;
+  margin: 20px auto 0;
+  color: var(--color-muted);
+  font-size: 0.91rem;
+  line-height: 1.85;
+}
+
+.car-hire-needs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.car-hire-need {
+  padding: 29px 23px 26px;
+  border-top: 1px solid #d9d5c6;
+  background: rgba(255, 255, 255, 0.48);
+}
+
+.car-hire-need-icon {
+  margin-bottom: 20px;
+  background: #ece9dd;
+  color: #8d7749;
+}
+
+.car-hire-need h3 {
+  margin: 0 0 12px;
+  color: var(--color-forest);
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.car-hire-need p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.82rem;
+  line-height: 1.85;
+}
+
+/* =========================================
+   BOOKING PROCESS
+========================================= */
+
+.car-hire-planning {
+  background: #eeece2;
+}
+
+.car-hire-planning-grid {
+  display: grid;
+  grid-template-columns: 0.88fr 1.12fr;
+  gap: clamp(45px, 9vw, 120px);
+  align-items: start;
+}
+
+.car-hire-planning-copy > p {
+  margin-top: 22px;
+}
+
+.car-hire-planning-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-top: 32px;
+  padding: 20px;
+  border-left: 2px solid var(--color-gold);
+  background: rgba(255, 255, 255, 0.56);
+}
+
+.car-hire-planning-note > svg {
+  flex: 0 0 auto;
+  color: #8b7548;
+}
+
+.car-hire-planning-note > div {
+  display: grid;
+  gap: 7px;
+}
+
+.car-hire-planning-note strong {
+  color: var(--color-forest);
+  font-size: 0.83rem;
+}
+
+.car-hire-planning-note span {
+  color: var(--color-muted);
+  font-size: 0.78rem;
+  line-height: 1.75;
+}
+
+.car-hire-steps {
+  border-top: 1px solid #d8d5c9;
+}
+
+.car-hire-step {
+  display: grid;
+  grid-template-columns: 55px 1fr;
+  gap: 21px;
+  padding: 28px 0;
+  border-bottom: 1px solid #d8d5c9;
+}
+
+.car-hire-step-number {
+  display: inline-flex;
+  width: 46px;
+  height: 46px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #c7b78f;
+  border-radius: 50%;
+  color: #806a40;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+}
+
+.car-hire-step h3 {
+  margin: 2px 0 8px;
+  color: var(--color-forest);
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 500;
+}
+
+.car-hire-step p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.84rem;
+  line-height: 1.85;
+}
+
+/* =========================================
+   ENQUIRY CHECKLIST
+========================================= */
+
+.car-hire-checklist {
+  padding: 49px 0;
+  background: var(--color-forest);
+  color: #fff;
+}
+
+.car-hire-checklist-inner {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.car-hire-checklist h2 {
+  margin: 11px 0 8px;
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+}
+
+.car-hire-checklist-inner > div:first-child > p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.84rem;
+  line-height: 1.8;
+}
+
+.car-hire-checklist-items {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 19px 24px;
+}
+
+.car-hire-checklist-items span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.car-hire-checklist-items svg {
+  flex: 0 0 auto;
+  color: var(--color-gold-light);
+}
+
+/* =========================================
+   FINAL CTA
+========================================= */
+
+.car-hire-final-cta {
+  background: var(--color-ivory);
+}
+
+.car-hire-final-cta-panel {
+  position: relative;
+  min-height: 390px;
+  overflow: hidden;
+  background: var(--color-forest-dark);
+  color: #fff;
+}
+
+.car-hire-final-cta-decoration {
+  position: absolute;
+  top: -150px;
+  right: -80px;
+  width: 490px;
+  height: 490px;
+  border: 1px solid rgba(197, 166, 106, 0.25);
+  border-radius: 50%;
+}
+
+.car-hire-final-cta-decoration::before,
+.car-hire-final-cta-decoration::after {
+  position: absolute;
+  border: 1px solid rgba(197, 166, 106, 0.2);
+  border-radius: 50%;
+  content: "";
+}
+
+.car-hire-final-cta-decoration::before {
+  inset: 45px;
+}
+
+.car-hire-final-cta-decoration::after {
+  inset: 100px;
+}
+
+.car-hire-final-cta-content {
+  position: relative;
+  z-index: 1;
+  max-width: 820px;
+  padding: clamp(35px, 6vw, 75px);
+}
+
+.car-hire-final-cta h2 {
+  margin: 18px 0;
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: clamp(2.6rem, 5vw, 4.5rem);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 1.06;
+}
+
+.car-hire-final-cta h2 em {
+  color: var(--color-gold-light);
+}
+
+.car-hire-final-cta-content > p {
+  max-width: 590px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.91rem;
+  line-height: 1.9;
+}
+
+.car-hire-final-secondary {
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  transition: color 180ms ease;
+}
+
+.car-hire-final-secondary:hover {
+  color: var(--color-gold-light);
+}
+
+/* =========================================
+   ANIMATION
+========================================= */
+
+@keyframes carHireHeroReveal {
+  from {
+    opacity: 0.7;
+    transform: scale(1.06);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1.015);
+  }
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1050px) {
+  .car-hire-service-grid {
+    gap: 16px;
+  }
+
+  .car-hire-service-body {
+    padding: 24px 19px;
+  }
+
+  .car-hire-service-title-row h3 {
+    font-size: 1.3rem;
+  }
+
+  .car-hire-needs-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .car-hire-checklist-inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 760px) {
+  .car-hire-hero {
+    min-height: 680px;
+    min-height: 82svh;
+  }
+
+  .car-hire-hero-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(11, 29, 21, 0.91),
+        rgba(11, 29, 21, 0.6)
+      ),
+      linear-gradient(
+        0deg,
+        rgba(11, 29, 21, 0.7),
+        transparent 70%
+      );
+  }
+
+  .car-hire-hero-content {
+    padding-right: 6%;
+    padding-left: 6%;
+  }
+
+  .car-hire-hero-copy {
+    width: 100%;
+    padding: 78px 0;
+  }
+
+  .car-hire-hero h1 {
+    font-size: clamp(3.2rem, 11vw, 5.1rem);
+  }
+
+  .car-hire-hero-copy > p {
+    max-width: 500px;
+    font-size: 0.92rem;
+  }
+
+  .car-hire-hero-bottom {
+    gap: 10px;
+    font-size: 0.69rem;
+  }
+
+  .car-hire-intro-grid,
+  .car-hire-planning-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .car-hire-section-top {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .car-hire-service-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .car-hire-service-image-wrap {
+    height: 270px;
+  }
+
+  .car-hire-service-body > p {
+    min-height: auto;
+  }
+
+  .car-hire-image-break {
+    min-height: 490px;
+  }
+
+  .car-hire-image-break-content {
+    padding: 85px 6%;
+  }
+
+  .car-hire-image-break-shade {
+    background: linear-gradient(
+      90deg,
+      rgba(12, 32, 22, 0.93),
+      rgba(12, 32, 22, 0.57)
+    );
+  }
+
+  .car-hire-centered-heading {
+    margin-bottom: 35px;
+  }
+
+  .car-hire-needs-grid {
+    gap: 15px;
+  }
+
+  .car-hire-need {
+    padding: 22px 17px;
+  }
+
+  .car-hire-need h3 {
+    font-size: 1.2rem;
+  }
+
+  .car-hire-checklist-items {
+    gap: 17px;
+  }
+
+  .car-hire-final-cta-decoration {
+    right: -270px;
+  }
+
+  .car-hire-final-cta-content {
+    padding: 37px 27px;
+  }
+}
+
+@media (max-width: 480px) {
+  .car-hire-page .eyebrow,
+  .car-hire-page .eyebrow-dark {
+    font-size: 0.61rem;
+    letter-spacing: 0.15em;
+  }
+
+  .car-hire-hero {
+    min-height: 700px;
+  }
+
+  .car-hire-hero-copy {
+    padding: 66px 0;
+  }
+
+  .car-hire-hero h1 {
+    font-size: 3.2rem;
+  }
+
+  .car-hire-hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 19px;
+  }
+
+  .car-hire-hero-bottom-divider {
+    display: none;
+  }
+
+  .car-hire-hero-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .car-hire-page .section-heading {
+    font-size: 2.6rem;
+  }
+
+  .car-hire-service-image-wrap {
+    height: 225px;
+  }
+
+  .car-hire-needs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .car-hire-need {
+    padding: 23px;
+  }
+
+  .car-hire-step {
+    grid-template-columns: 43px 1fr;
+    gap: 15px;
+  }
+
+  .car-hire-step-number {
+    width: 39px;
+    height: 39px;
+  }
+
+  .car-hire-checklist-items {
+    grid-template-columns: 1fr;
+  }
+
+  .car-hire-final-cta h2 {
+    font-size: 2.65rem;
+  }
+
+  .car-hire-final-cta-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 19px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .car-hire-hero-image {
+    animation: none;
+  }
+
+  .car-hire-page *,
+  .car-hire-page *::before,
+  .car-hire-page *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+
+/* =========================================
+   GREEN TEXT — ENQUIRY CHECKLIST
+========================================= */
+
+.car-hire-checklist {
+  background: #f0eee5;
+  color: var(--color-forest);
+}
+
+.car-hire-checklist .eyebrow {
+  color: #806a40;
+}
+
+.car-hire-checklist h2 {
+  color: var(--color-forest);
+}
+
+.car-hire-checklist-inner > div:first-child > p {
+  color: #526057;
+}
+
+.car-hire-checklist-items span {
+  color: var(--color-forest);
+}
+
+.car-hire-checklist-items svg {
+  color: #9e824c;
+}
+
+/* =========================================
+   GREEN TEXT — FINAL ENQUIRY CTA
+========================================= */
+
+.car-hire-final-cta-panel {
+  background: #f0eee5;
+  border: 1px solid #e2dfd2;
+  color: var(--color-forest);
+}
+
+.car-hire-final-cta .eyebrow {
+  color: #806a40;
+}
+
+.car-hire-final-cta h2 {
+  color: var(--color-forest);
+}
+
+.car-hire-final-cta h2 em {
+  color: #806a40;
+}
+
+.car-hire-final-cta-content > p {
+  color: #526057;
+}
+
+.car-hire-final-secondary {
+  color: var(--color-forest);
+}
+
+.car-hire-final-secondary:hover {
+  color: #806a40;
+}
+
+.car-hire-final-cta-decoration {
+  border-color: rgba(23, 59, 43, 0.15);
+}
+
+.car-hire-final-cta-decoration::before,
+.car-hire-final-cta-decoration::after {
+  border-color: rgba(23, 59, 43, 0.12);
+}
