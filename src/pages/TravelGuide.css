@@ -1093,3 +1093,144 @@
     left: 6%;
   }
 }
+
+/* =========================================
+   RESPONSIBLE TRAVEL — PEARLP SAFARIS
+========================================= */
+
+.travel-guide-responsible {
+  background: #f7f5ef;
+  color: #263b2d;
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.travel-guide-responsible-grid {
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 32px;
+}
+
+.travel-guide-responsible-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 66px;
+  height: 66px;
+  color: #b69758;
+  border: 1px solid rgba(182, 151, 88, 0.45);
+  border-radius: 50%;
+}
+
+.travel-guide-responsible-copy .eyebrow {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: #a18449;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.travel-guide-responsible-copy h2 {
+  margin: 0 0 22px;
+  color: #183b2b;
+  font-size: clamp(28px, 3.2vw, 43px);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.travel-guide-responsible-copy h2 em {
+  color: #a18449;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+}
+
+.travel-guide-responsible-copy p {
+  max-width: 720px;
+  margin: 0;
+  color: #5e685f;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.travel-guide-responsible-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 20px;
+  color: #183b2b;
+  border: 1px solid rgba(24, 59, 43, 0.3);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.travel-guide-responsible-link:hover {
+  color: #fff;
+  background: #183b2b;
+  border-color: #183b2b;
+}
+
+.travel-guide-responsible-link svg {
+  transition: transform 0.25s ease;
+}
+
+.travel-guide-responsible-link:hover svg {
+  transform: translateX(4px);
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+  .travel-guide-responsible-grid {
+    grid-template-columns: 60px minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .travel-guide-responsible-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .travel-guide-responsible-link {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
+
+@media (max-width: 600px) {
+  .travel-guide-responsible {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .travel-guide-responsible-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .travel-guide-responsible-icon {
+    width: 54px;
+    height: 54px;
+  }
+
+  .travel-guide-responsible-copy h2 {
+    font-size: clamp(27px, 8vw, 36px);
+  }
+
+  .travel-guide-responsible-copy p {
+    font-size: 14px;
+  }
+
+  .travel-guide-responsible-link {
+    grid-column: 1;
+    justify-self: start;
+    white-space: normal;
+  }
+}

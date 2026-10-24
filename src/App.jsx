@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
@@ -52,15 +53,9 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
 
-          <Route
-            path="/destinations"
-            element={<Destinations />}
-          />
+          <Route path="/destinations" element={<Destinations />} />
 
-          <Route
-            path="/uganda-safaris"
-            element={<UgandaSafaris />}
-          />
+          <Route path="/uganda-safaris" element={<UgandaSafaris />} />
 
           <Route
             path="/gorilla-trekking-uganda"
@@ -72,15 +67,9 @@ export default function App() {
             element={<WildlifeSafaris />}
           />
 
-          <Route
-            path="/safari-packages"
-            element={<SafariPackages />}
-          />
+          <Route path="/safari-packages" element={<SafariPackages />} />
 
-          <Route
-            path="/birdwatching-uganda"
-            element={<Birdwatching />}
-          />
+          <Route path="/birdwatching-uganda" element={<Birdwatching />} />
 
           <Route
             path="/cultural-tours-uganda"
@@ -92,35 +81,17 @@ export default function App() {
             element={<HikingAdventure />}
           />
 
-          <Route
-            path="/car-hire-uganda"
-            element={<CarHire />}
-          />
+          <Route path="/car-hire-uganda" element={<CarHire />} />
 
-          <Route
-            path="/uganda-safari-lodges"
-            element={<SafariLodges />}
-          />
+          <Route path="/uganda-safari-lodges" element={<SafariLodges />} />
 
-          <Route
-            path="/travel-guide"
-            element={<TravelGuide />}
-          />
+          <Route path="/travel-guide" element={<TravelGuide />} />
 
-          <Route
-            path="/about-us"
-            element={<AboutUs />}
-          />
+          <Route path="/about-us" element={<AboutUs />} />
 
-          <Route
-            path="/contact"
-            element={<Contact />}
-          />
+          <Route path="/contact" element={<Contact />} />
 
-          <Route
-            path="/privacy-policy"
-            element={<PrivacyPolicy />}
-          />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
           {plannedPages.map((page) => (
             <Route

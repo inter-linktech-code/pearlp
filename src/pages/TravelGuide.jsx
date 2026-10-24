@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
@@ -22,6 +23,8 @@ import gorillaImage from "../assets/gorilla.jpg";
 import wildlifeImage from "../assets/wildlife.jpg";
 
 const SITE_URL = "https://pearlpsafaris.com";
+const PAGE_URL = `${SITE_URL}/travel-guide`;
+const SOCIAL_IMAGE = `${SITE_URL}/og-travel-guide.jpg`;
 
 const guideTopics = [
   {
@@ -63,9 +66,9 @@ const guideTopics = [
   {
     number: "04",
     icon: HeartPulse,
-    title: "Health & preparation",
+    title: "Health and preparation",
     description:
-      "Speak with a qualified travel-health professional early enough to receive advice suited to your itinerary and medical needs.",
+      "Speak with a qualified travel-health professional early enough to receive advice suited to your itinerary and personal needs.",
     points: [
       "Ask about recommended and required vaccinations.",
       "Discuss malaria prevention and personal medication.",
@@ -89,7 +92,7 @@ const guideTopics = [
     icon: Backpack,
     title: "What to pack",
     description:
-      "Pack for a mix of warm days, cooler evenings, outdoor activities and possible rain, adjusting your list to the season.",
+      "Pack for warm days, cooler evenings, outdoor activities and possible rain, adjusting your list to the season.",
     points: [
       "Bring layers and lightweight rain protection.",
       "Pack comfortable walking shoes and sun protection.",
@@ -104,7 +107,7 @@ const itineraryIdeas = [
     title: "The rainforest encounter",
     description:
       "A short trip centred on gorilla trekking, with time for transfers and a stay near the forest.",
-    link: "/gorilla-trekking",
+    link: "/gorilla-trekking-uganda",
     linkText: "Explore gorilla trekking",
     image: gorillaImage,
     imageAlt: "Mountain gorilla in a tropical rainforest",
@@ -114,16 +117,16 @@ const itineraryIdeas = [
     title: "Wild Uganda",
     description:
       "A wildlife-focused journey with time for game drives and selected park experiences.",
-    link: "/wildlife-safaris",
+    link: "/wildlife-safaris-uganda",
     linkText: "Explore wildlife safaris",
     image: wildlifeImage,
-    imageAlt: "Wildlife in a Ugandan national park",
+    imageAlt: "Wildlife in a Ugandan natural landscape",
   },
   {
     days: "08–12 DAYS",
     title: "The wider adventure",
     description:
-      "A more extended journey combining selected landscapes, wildlife and cultural experiences.",
+      "An extended journey combining selected landscapes, wildlife and cultural experiences.",
     link: "/safari-packages",
     linkText: "Explore safari ideas",
     image: safariHeroImage,
@@ -137,9 +140,11 @@ function GuideTopic({ topic }) {
   return (
     <article className="travel-guide-topic">
       <div className="travel-guide-topic-top">
-        <span className="travel-guide-topic-number">{topic.number}</span>
+        <span className="travel-guide-topic-number">
+          {topic.number}
+        </span>
 
-        <span className="travel-guide-topic-icon">
+        <span className="travel-guide-topic-icon" aria-hidden="true">
           <Icon size={22} strokeWidth={1.6} />
         </span>
       </div>
@@ -178,11 +183,12 @@ function ItineraryCard({ item }) {
 
       <div className="travel-guide-itinerary-content">
         <h3>{item.title}</h3>
+
         <p>{item.description}</p>
 
         <Link to={item.link}>
           {item.linkText}
-          <ArrowRight size={16} />
+          <ArrowRight size={16} aria-hidden="true" />
         </Link>
       </div>
     </article>
@@ -194,12 +200,12 @@ export default function TravelGuide() {
     <>
       <Helmet>
         <title>
-          Uganda Travel Guide | Travel Tips & Safari Planning | PearlP Safaris
+          Uganda Travel Guide | Safari Planning Tips | PearlP Safaris
         </title>
 
         <meta
           name="description"
-          content="Plan your Uganda trip with practical travel guidance on seasons, gorilla trekking, entry documents, health preparation, transport, packing and safari itineraries."
+          content="Plan your Uganda trip with practical travel advice on seasons, gorilla trekking, travel documents, health preparation, transport, packing and safari itineraries."
         />
 
         <meta
@@ -207,34 +213,21 @@ export default function TravelGuide() {
           content="index, follow, max-image-preview:large"
         />
 
-        <link
-          rel="canonical"
-          href={`${SITE_URL}/travel-guide`}
-        />
+        <link rel="canonical" href={PAGE_URL} />
 
-        <meta
-          property="og:title"
-          content="Uganda Travel Guide | PearlP Safaris"
-        />
+        <meta property="og:title" content="Uganda Travel Guide | PearlP Safaris" />
 
         <meta
           property="og:description"
-          content="Useful planning guidance for gorilla trekking, wildlife safaris and travel across Uganda."
+          content="Prepare for gorilla trekking, wildlife safaris and unforgettable journeys across Uganda with practical travel planning advice."
         />
 
         <meta property="og:type" content="website" />
-
-        <meta
-          property="og:url"
-          content={`${SITE_URL}/travel-guide`}
-        />
-
-        <meta
-          property="og:image"
-          content={`${SITE_URL}/og-travel-guide.jpg`}
-        />
-
+        <meta property="og:url" content={PAGE_URL} />
+        <meta property="og:image" content={SOCIAL_IMAGE} />
+        <meta property="og:image:alt" content="Discover Uganda with PearlP Safaris" />
         <meta property="og:site_name" content="PearlP Safaris" />
+        <meta property="og:locale" content="en_UG" />
 
         <meta name="twitter:card" content="summary_large_image" />
 
@@ -248,10 +241,7 @@ export default function TravelGuide() {
           content="Practical tips for planning gorilla trekking, wildlife safaris and travel across Uganda."
         />
 
-        <meta
-          name="twitter:image"
-          content={`${SITE_URL}/og-travel-guide.jpg`}
-        />
+        <meta name="twitter:image" content={SOCIAL_IMAGE} />
       </Helmet>
 
       <main className="travel-guide-page">
@@ -260,8 +250,9 @@ export default function TravelGuide() {
           <img
             className="travel-guide-hero-image"
             src={safariHeroImage}
-            alt="Ugandan wilderness and green safari landscapes"
+            alt=""
             fetchPriority="high"
+            decoding="async"
           />
 
           <div className="travel-guide-hero-overlay" />
@@ -288,7 +279,7 @@ export default function TravelGuide() {
               <div className="travel-guide-hero-actions">
                 <a href="#travel-essentials" className="button button-gold">
                   Start planning
-                  <ArrowRight size={17} />
+                  <ArrowRight size={17} aria-hidden="true" />
                 </a>
 
                 <Link
@@ -296,7 +287,7 @@ export default function TravelGuide() {
                   className="travel-guide-hero-link"
                 >
                   Discover Uganda
-                  <ArrowRight size={17} />
+                  <ArrowRight size={17} aria-hidden="true" />
                 </Link>
               </div>
             </div>
@@ -336,7 +327,7 @@ export default function TravelGuide() {
               </p>
 
               <div className="travel-guide-intro-note">
-                <Compass size={21} />
+                <Compass size={21} aria-hidden="true" />
 
                 <span>
                   Plan around your interests, your pace and the experiences
@@ -397,7 +388,7 @@ export default function TravelGuide() {
 
               <div className="travel-guide-season-points">
                 <div>
-                  <Sun size={20} />
+                  <Sun size={20} aria-hidden="true" />
 
                   <span>
                     <strong>Consider your activities</strong>
@@ -410,7 +401,7 @@ export default function TravelGuide() {
                 </div>
 
                 <div>
-                  <CalendarDays size={20} />
+                  <CalendarDays size={20} aria-hidden="true" />
 
                   <span>
                     <strong>Book key experiences early</strong>
@@ -454,7 +445,7 @@ export default function TravelGuide() {
 
               <p>
                 These are starting points, not fixed packages. Your actual
-                route and trip length will depend on travel dates, interests,
+                route and trip length depend on your travel dates, interests,
                 transport and confirmed arrangements.
               </p>
             </div>
@@ -467,13 +458,13 @@ export default function TravelGuide() {
 
             <div className="travel-guide-itinerary-footer">
               <span>
-                <Map size={19} />
+                <Map size={19} aria-hidden="true" />
                 Prefer a trip designed around you?
               </span>
 
               <Link to="/contact">
                 Discuss your itinerary
-                <ArrowRight size={16} />
+                <ArrowRight size={16} aria-hidden="true" />
               </Link>
             </div>
           </div>
@@ -483,7 +474,7 @@ export default function TravelGuide() {
         <section className="travel-guide-responsible section-padding">
           <div className="page-container travel-guide-responsible-grid">
             <div className="travel-guide-responsible-icon">
-              <ShieldCheck size={38} strokeWidth={1.3} />
+              <ShieldCheck size={38} strokeWidth={1.3} aria-hidden="true" />
             </div>
 
             <div className="travel-guide-responsible-copy">
@@ -504,27 +495,30 @@ export default function TravelGuide() {
             </div>
 
             <Link
-              to="/cultural-tours"
+              to="/cultural-tours-uganda"
               className="travel-guide-responsible-link"
             >
               Explore cultural experiences
-              <ArrowRight size={17} />
+              <ArrowRight size={17} aria-hidden="true" />
             </Link>
           </div>
         </section>
 
         {/* TRAVEL INFORMATION DISCLAIMER */}
-        <section className="travel-guide-disclaimer">
+        <section
+          className="travel-guide-disclaimer"
+          aria-label="Important travel information"
+        >
           <div className="page-container travel-guide-disclaimer-inner">
-            <ShieldCheck size={20} />
+            <ShieldCheck size={20} aria-hidden="true" />
 
             <p>
               <strong>A note on travel requirements:</strong> Entry rules,
               visa requirements, health guidance, permit conditions and
               transport arrangements can change. Verify the latest
-              requirements with the relevant official authorities and
-              qualified professionals before travelling. This guide is
-              general planning information, not legal or medical advice.
+              requirements with relevant official authorities and qualified
+              professionals before travelling. This guide provides general
+              planning information, not legal or medical advice.
             </p>
           </div>
         </section>
@@ -560,7 +554,7 @@ export default function TravelGuide() {
             <div className="travel-guide-final-actions">
               <Link to="/contact" className="button button-gold">
                 Start planning your trip
-                <ArrowRight size={17} />
+                <ArrowRight size={17} aria-hidden="true" />
               </Link>
 
               <Link

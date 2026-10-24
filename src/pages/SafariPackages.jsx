@@ -1,3 +1,5 @@
+// src/pages/SafariPackages.jsx
+
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
@@ -38,7 +40,7 @@ const packages = [
       "Scenic countryside journey",
     ],
     icon: Trees,
-    link: "/gorilla-trekking",
+    link: "/gorilla-trekking-uganda",
   },
   {
     number: "02",
@@ -55,7 +57,7 @@ const packages = [
       "Wildlife and landscape photography",
     ],
     icon: Binoculars,
-    link: "/wildlife-safaris",
+    link: "/wildlife-safaris-uganda",
   },
   {
     number: "03",
@@ -102,31 +104,31 @@ const experiences = [
     title: "Gorilla trekking",
     description: "Rainforest encounters and conservation",
     icon: Trees,
-    link: "/gorilla-trekking",
+    link: "/gorilla-trekking-uganda",
   },
   {
     title: "Wildlife safaris",
     description: "National parks and guided wildlife viewing",
     icon: Binoculars,
-    link: "/wildlife-safaris",
+    link: "/wildlife-safaris-uganda",
   },
   {
     title: "Birdwatching",
     description: "Forests, wetlands and lakeshores",
     icon: Compass,
-    link: "/birdwatching",
+    link: "/birdwatching-uganda",
   },
   {
     title: "Hiking & adventure",
     description: "Mountains, trails and scenic landscapes",
     icon: Mountain,
-    link: "/hiking-adventure",
+    link: "/hiking-adventure-uganda",
   },
   {
     title: "Cultural experiences",
     description: "Local heritage and community experiences",
     icon: Heart,
-    link: "/cultural-tours",
+    link: "/cultural-tours-uganda",
   },
   {
     title: "Scenic escapes",
@@ -208,14 +210,22 @@ export default function SafariPackages() {
       <section className="packages-hero">
         <div
           className="packages-hero-image"
-          style={{ backgroundImage: `url("${safariVehicleImage}")` }}
+          style={{
+            backgroundImage: `url("${safariVehicleImage}")`,
+          }}
           aria-hidden="true"
         />
 
-        <div className="packages-hero-overlay" aria-hidden="true" />
+        <div
+          className="packages-hero-overlay"
+          aria-hidden="true"
+        />
 
         <div className="packages-container packages-hero-content">
-          <nav className="packages-breadcrumb" aria-label="Breadcrumb">
+          <nav
+            className="packages-breadcrumb"
+            aria-label="Breadcrumb"
+          >
             <Link to="/">Home</Link>
             <span>/</span>
             <Link to="/uganda-safaris">Uganda Safaris</Link>
@@ -249,7 +259,10 @@ export default function SafariPackages() {
               <ArrowRight size={18} />
             </a>
 
-            <Link to="/contact" className="packages-hero-link">
+            <Link
+              to="/contact"
+              className="packages-hero-link"
+            >
               Plan a private safari
               <ArrowUpRight size={17} />
             </Link>
@@ -294,7 +307,10 @@ export default function SafariPackages() {
               and confirmed around your travel plans.
             </p>
 
-            <Link to="/contact" className="packages-inline-link">
+            <Link
+              to="/contact"
+              className="packages-inline-link"
+            >
               Tell us what you have in mind
               <ArrowRight size={17} />
             </Link>
@@ -331,7 +347,10 @@ export default function SafariPackages() {
               const Icon = item.icon;
 
               return (
-                <article className="package-card" key={item.number}>
+                <article
+                  className="package-card"
+                  key={item.number}
+                >
                   <Link
                     to={item.link}
                     className="package-card-image"
@@ -381,7 +400,10 @@ export default function SafariPackages() {
                       ))}
                     </div>
 
-                    <Link to={item.link} className="package-card-link">
+                    <Link
+                      to={item.link}
+                      className="package-card-link"
+                    >
                       Explore this experience
                       <ArrowRight size={16} />
                     </Link>

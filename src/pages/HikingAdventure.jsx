@@ -1,3 +1,4 @@
+// src/pages/HikingAdventure.jsx
 
 import React from "react";
 import { Helmet } from "react-helmet-async";
@@ -14,7 +15,15 @@ import {
   Trees,
   Waves,
 } from "lucide-react";
+
 import "./HikingAdventure.css";
+
+import hikingHeroImage from "../assets/hiking-hero.jpg";
+import mountainHikingImage from "../assets/mountain-hiking.jpg";
+import sipiFallsImage from "../assets/sipi-falls.jpg";
+import forestHikingImage from "../assets/forest-hiking.jpg";
+import scenicOutdoorsImage from "../assets/scenic-outdoors.jpg";
+import hikingLandscapeImage from "../assets/hiking-landscape.jpg";
 
 const adventureExperiences = [
   {
@@ -23,8 +32,7 @@ const adventureExperiences = [
     location: "Rwenzori Mountains & Mount Elgon",
     description:
       "Discover dramatic mountain scenery, changing landscapes and hiking possibilities suited to your interests and experience.",
-    image:
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1100&q=85",
+    image: mountainHikingImage,
     icon: Mountain,
     tag: "MOUNTAINS",
   },
@@ -34,8 +42,7 @@ const adventureExperiences = [
     location: "Sipi Falls & surrounding landscapes",
     description:
       "Explore scenic trails, green hillsides and waterfall country, with time to appreciate the landscape along the way.",
-    image:
-      "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1100&q=85",
+    image: sipiFallsImage,
     icon: Waves,
     tag: "NATURE TRAILS",
   },
@@ -45,8 +52,7 @@ const adventureExperiences = [
     location: "Uganda's forest landscapes",
     description:
       "Slow down beneath the canopy and experience the sounds, textures and natural beauty of Uganda's forest environments.",
-    image:
-      "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1100&q=85",
+    image: forestHikingImage,
     icon: Trees,
     tag: "FORESTS",
   },
@@ -56,8 +62,7 @@ const adventureExperiences = [
     location: "Highlands, lakes and countryside",
     description:
       "Bring open landscapes, peaceful viewpoints and outdoor exploration into a journey designed around your travel style.",
-    image:
-      "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1100&q=85",
+    image: scenicOutdoorsImage,
     icon: Compass,
     tag: "THE OUTDOORS",
   },
@@ -109,35 +114,54 @@ export default function HikingAdventure() {
         <title>
           Hiking & Adventure in Uganda | Nature Trails | PearlP Safaris
         </title>
+
         <meta
           name="description"
           content="Explore hiking and outdoor adventures in Uganda, from mountain landscapes and waterfall trails to forests and scenic countryside. Plan your journey with PearlP Safaris."
         />
+
         <meta
           name="keywords"
           content="hiking Uganda, adventure travel Uganda, Rwenzori hiking, Mount Elgon hiking, Sipi Falls hiking, Uganda nature trails, outdoor adventures Uganda"
         />
+
         <link
           rel="canonical"
-          href="https://YOUR-DOMAIN-HERE/hiking-adventure-uganda"
+          href="https://pearlpsafaris.com/hiking-adventure-uganda"
         />
+
         <meta property="og:type" content="website" />
+
         <meta
           property="og:title"
           content="Hiking & Adventure in Uganda | PearlP Safaris"
         />
+
         <meta
           property="og:description"
           content="Discover Uganda's mountain scenery, waterfalls, forest trails and outdoor experiences."
         />
+
         <meta
           property="og:url"
-          content="https://YOUR-DOMAIN-HERE/hiking-adventure-uganda"
+          content="https://pearlpsafaris.com/hiking-adventure-uganda"
         />
+
+        <meta
+          property="og:image"
+          content="https://pearlpsafaris.com/webicon.png"
+        />
+
+        <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
 
       <main className="hiking-page">
-        <section className="hiking-hero">
+        <section
+          className="hiking-hero"
+          style={{
+            backgroundImage: `url(${hikingHeroImage})`,
+          }}
+        >
           <div className="hiking-hero-shade" />
 
           <div className="page-container hiking-hero-inner">
@@ -185,12 +209,16 @@ export default function HikingAdventure() {
           </div>
         </section>
 
-        <section className="hiking-intro hiking-section" id="hiking-intro">
+        <section
+          className="hiking-intro hiking-section"
+          id="hiking-intro"
+        >
           <div className="page-container hiking-intro-grid">
             <div className="hiking-intro-heading">
               <span className="hiking-eyebrow hiking-eyebrow-dark">
                 MAKE SPACE FOR DISCOVERY
               </span>
+
               <h2>
                 A world waiting
                 <br />
@@ -205,11 +233,13 @@ export default function HikingAdventure() {
                 take in sweeping views and discover the details that reveal
                 themselves when you travel at a slower pace.
               </p>
+
               <p>
                 Whether you are interested in a gentle nature walk or a more
                 demanding mountain adventure, the right experience depends on
                 your available time, fitness, preparation and local conditions.
               </p>
+
               <Link to="/uganda-safaris" className="hiking-inline-link">
                 Explore Uganda safaris <ArrowUpRight size={17} />
               </Link>
@@ -221,8 +251,12 @@ export default function HikingAdventure() {
               const Icon = principle.icon;
 
               return (
-                <article className="hiking-principle" key={principle.title}>
+                <article
+                  className="hiking-principle"
+                  key={principle.title}
+                >
                   <Icon size={25} strokeWidth={1.4} />
+
                   <div>
                     <h3>{principle.title}</h3>
                     <p>{principle.text}</p>
@@ -240,6 +274,7 @@ export default function HikingAdventure() {
                 <span className="hiking-eyebrow hiking-eyebrow-dark">
                   CHOOSE YOUR ADVENTURE
                 </span>
+
                 <h2>
                   Different paths.
                   <br />
@@ -266,12 +301,14 @@ export default function HikingAdventure() {
                     <div className="hiking-experience-image">
                       <img
                         src={experience.image}
-                        alt={experience.title}
+                        alt={`${experience.title} in Uganda`}
                         loading="lazy"
                       />
+
                       <span className="hiking-experience-number">
                         {experience.number}
                       </span>
+
                       <span className="hiking-experience-icon">
                         <Icon size={20} strokeWidth={1.5} />
                       </span>
@@ -281,12 +318,16 @@ export default function HikingAdventure() {
                       <span className="hiking-category">
                         {experience.tag}
                       </span>
+
                       <span className="hiking-location">
                         <MapPin size={14} />
                         {experience.location}
                       </span>
+
                       <h3>{experience.title}</h3>
+
                       <p>{experience.description}</p>
+
                       <Link
                         to="/contact"
                         className="hiking-card-link"
@@ -302,21 +343,30 @@ export default function HikingAdventure() {
           </div>
         </section>
 
-        <section className="hiking-landscape">
+        <section
+          className="hiking-landscape"
+          style={{
+            backgroundImage: `url(${hikingLandscapeImage})`,
+          }}
+        >
           <div className="hiking-landscape-shade" />
+
           <div className="page-container hiking-landscape-content">
             <span className="hiking-eyebrow">
               TAKE THE SCENIC ROUTE
             </span>
+
             <h2>
               Let the landscape
               <br />
               <em>set the pace.</em>
             </h2>
+
             <p>
               Make room for fresh air, remarkable views and the rewarding
               feeling of discovering somewhere new.
             </p>
+
             <Link
               to="/destinations"
               className="hiking-button hiking-button-gold"
@@ -332,16 +382,19 @@ export default function HikingAdventure() {
               <span className="hiking-eyebrow hiking-eyebrow-dark">
                 PLAN WITH CONFIDENCE
               </span>
+
               <h2>
                 Your adventure
                 <br />
                 <em>starts with a plan.</em>
               </h2>
+
               <p>
                 The best outdoor journey is one that matches your interests
                 and is prepared with care. Tell us what you have in mind and
                 discuss the practical details before you travel.
               </p>
+
               <Link
                 to="/contact"
                 className="hiking-button hiking-button-dark"
@@ -352,8 +405,14 @@ export default function HikingAdventure() {
 
             <div className="hiking-planning-steps">
               {planningSteps.map((step) => (
-                <article className="hiking-planning-step" key={step.number}>
-                  <span className="hiking-step-number">{step.number}</span>
+                <article
+                  className="hiking-planning-step"
+                  key={step.number}
+                >
+                  <span className="hiking-step-number">
+                    {step.number}
+                  </span>
+
                   <div>
                     <h3>{step.title}</h3>
                     <p>{step.description}</p>
@@ -374,7 +433,9 @@ export default function HikingAdventure() {
               <span className="hiking-eyebrow">
                 PREPARE FOR THE JOURNEY
               </span>
+
               <h2>Adventure with care.</h2>
+
               <p>
                 Check route difficulty, weather and access conditions before
                 setting out. Use appropriate equipment, follow qualified
@@ -389,22 +450,32 @@ export default function HikingAdventure() {
           </div>
         </section>
 
-        <section className="hiking-final-cta">
+        <section
+          className="hiking-final-cta"
+          style={{
+            backgroundImage: `url(${hikingLandscapeImage})`,
+          }}
+        >
           <div className="hiking-final-shade" />
+
           <div className="page-container hiking-final-content">
             <Mountain size={34} strokeWidth={1.2} />
+
             <span className="hiking-eyebrow">
               YOUR NEXT CHAPTER IS OUT THERE
             </span>
+
             <h2>
               Step outside.
               <br />
               <em>Discover Uganda.</em>
             </h2>
+
             <p>
               Tell us what kind of adventure you are looking for and start
               exploring the possibilities.
             </p>
+
             <Link
               to="/contact"
               className="hiking-button hiking-button-gold"

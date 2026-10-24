@@ -1,4 +1,3 @@
-// src/pages/Home.jsx
 
 import React from "react";
 import { Helmet } from "react-helmet-async";
@@ -59,7 +58,7 @@ const experiences = [
     image: gorillaImage,
     alt: "Mountain gorilla in its natural forest habitat",
     icon: Trees,
-    link: "/gorilla-trekking",
+    link: "/gorilla-trekking-uganda",
   },
   {
     number: "02",
@@ -70,7 +69,7 @@ const experiences = [
     image: wildlifeImage,
     alt: "African wildlife on safari",
     icon: Binoculars,
-    link: "/wildlife-safaris",
+    link: "/wildlife-safaris-uganda",
   },
   {
     number: "03",
@@ -81,7 +80,7 @@ const experiences = [
     image: birdsImage,
     alt: "Bird in a natural Ugandan habitat",
     icon: Bird,
-    link: "/birdwatching",
+    link: "/birdwatching-uganda",
   },
   {
     number: "04",
@@ -92,7 +91,7 @@ const experiences = [
     image: hikingImage,
     alt: "Nature and mountain adventure landscape",
     icon: Mountain,
-    link: "/hiking-adventure",
+    link: "/hiking-adventure-uganda",
   },
 ];
 
@@ -102,21 +101,21 @@ const destinations = [
     type: "Gorilla trekking · Rainforest",
     image: bwindiImage,
     alt: "Bwindi Impenetrable Forest",
-    link: "/gorilla-trekking",
+    link: "/gorilla-trekking-uganda",
   },
   {
     name: "Queen Elizabeth National Park",
     type: "Wildlife · Game drives",
     image: queenImage,
     alt: "Queen Elizabeth National Park landscape",
-    link: "/wildlife-safaris",
+    link: "/wildlife-safaris-uganda",
   },
   {
     name: "Murchison Falls National Park",
     type: "Wildlife · River adventures",
     image: murchisonImage,
     alt: "Murchison Falls National Park landscape",
-    link: "/wildlife-safaris",
+    link: "/wildlife-safaris-uganda",
   },
 ];
 
@@ -257,16 +256,14 @@ function HomeButton({ to, href, children, variant = "gold" }) {
   const className = `home-button home-button-${variant}`;
 
   if (href) {
+    const isWhatsApp = href.startsWith("https://wa.me/");
+
     return (
       <a
         className={className}
         href={href}
-        target={href.startsWith("https://wa.me/") ? "_blank" : undefined}
-        rel={
-          href.startsWith("https://wa.me/")
-            ? "noopener noreferrer"
-            : undefined
-        }
+        target={isWhatsApp ? "_blank" : undefined}
+        rel={isWhatsApp ? "noopener noreferrer" : undefined}
       >
         {children}
       </a>
@@ -274,7 +271,7 @@ function HomeButton({ to, href, children, variant = "gold" }) {
   }
 
   return (
-    <Link className={className} to={to}>
+    <Link className={className} to={to || "/"}>
       {children}
     </Link>
   );
@@ -322,9 +319,7 @@ export default function Home() {
 
         <div className="home-hero-inner">
           <div className="home-hero-copy">
-            <Eyebrow light>
-              PEARL P INTERNATIONAL SAFARI
-            </Eyebrow>
+            <Eyebrow light>PEARL P INTERNATIONAL SAFARI</Eyebrow>
 
             <h1 id="home-hero-title">
               Find yourself
@@ -435,7 +430,10 @@ export default function Home() {
               const Icon = experience.icon;
 
               return (
-                <article className="home-experience-card" key={experience.title}>
+                <article
+                  className="home-experience-card"
+                  key={experience.title}
+                >
                   <Link
                     to={experience.link}
                     className="home-experience-image"
@@ -572,7 +570,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SUPPORTING SERVICES AND NEW SERVICES */}
+      {/* SERVICES */}
       <section className="home-services" id="travel-services">
         <div className="home-container">
           <div className="home-section-heading home-services-heading">

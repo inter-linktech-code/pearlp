@@ -8,13 +8,12 @@ import {
   CheckCircle2,
   Clock3,
   Compass,
-  Mail,
-  MapPin,
   MessageCircle,
   Send,
-  Users,
 } from "lucide-react";
 import "./Contact.css";
+
+const WHATSAPP_NUMBER = "256789842436";
 
 const interests = [
   "Gorilla trekking",
@@ -41,8 +40,6 @@ export default function Contact() {
     message: "",
   });
 
-  const [submitted, setSubmitted] = useState(false);
-
   function handleChange(event) {
     const { name, value } = event.target;
 
@@ -63,7 +60,39 @@ export default function Contact() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    setSubmitted(true);
+
+    const selectedInterests = form.interests.length
+      ? form.interests.join(", ")
+      : "Not specified";
+
+    const enquiry = [
+      "HELLO PEARLP SAFARIS! 🌍",
+      "",
+      "I'd like to enquire about planning a safari or trip.",
+      "",
+      "TRAVELLER DETAILS",
+      `Full name: ${form.name.trim()}`,
+      `Email: ${form.email.trim()}`,
+      `Travelling from: ${form.country.trim() || "Not specified"}`,
+      "",
+      "TRIP DETAILS",
+      `Preferred arrival date: ${form.travelDate || "Flexible / not specified"}`,
+      `Trip duration: ${form.duration || "Not specified"}`,
+      `Number of travellers: ${form.travellers}`,
+      `Budget per person: ${form.budget || "Prefer to discuss"}`,
+      `Interests: ${selectedInterests}`,
+      "",
+      "ADDITIONAL MESSAGE",
+      form.message.trim() || "No additional message provided.",
+      "",
+      "Please let me know the available options and next steps.",
+    ].join("\n");
+
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+      enquiry
+    )}`;
+
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
   }
 
   return (
@@ -80,7 +109,7 @@ export default function Contact() {
         />
         <link
           rel="canonical"
-          href="https://YOUR-DOMAIN-HERE/contact"
+          href="https://pearlpsafaris.com/contact"
         />
         <meta property="og:title" content="Contact PearlP Safaris" />
         <meta
@@ -90,7 +119,7 @@ export default function Contact() {
         <meta property="og:type" content="website" />
         <meta
           property="og:url"
-          content="https://YOUR-DOMAIN-HERE/contact"
+          content="https://pearlpsafaris.com/contact"
         />
       </Helmet>
 
@@ -137,7 +166,9 @@ export default function Contact() {
         <section className="contact-main section-padding" id="contact-form">
           <div className="page-container contact-layout">
             <aside className="contact-sidebar">
-              <span className="eyebrow-dark">LET'S START WITH A CONVERSATION</span>
+              <span className="eyebrow-dark">
+                LET'S START WITH A CONVERSATION
+              </span>
 
               <h2>
                 Every great
@@ -223,208 +254,190 @@ export default function Contact() {
                 </p>
               </div>
 
-              {submitted ? (
-                <div className="contact-form-notice" role="status">
-                  <CheckCircle2 size={30} />
-                  <h3>Your details are ready.</h3>
-                  <p>
-                    The form has not sent an enquiry because a submission
-                    service has not been connected yet. Connect your email
-                    service or backend before accepting real enquiries.
-                  </p>
-                  <button
-                    className="button button-dark"
-                    type="button"
-                    onClick={() => setSubmitted(false)}
-                  >
-                    Review your details <ArrowRight size={16} />
-                  </button>
+              <form className="contact-form" onSubmit={handleSubmit}>
+                <div className="contact-form-section-title">
+                  <span>01</span>
+                  <h3>About you</h3>
                 </div>
-              ) : (
-                <form className="contact-form" onSubmit={handleSubmit}>
-                  <div className="contact-form-section-title">
-                    <span>01</span>
-                    <h3>About you</h3>
-                  </div>
 
-                  <div className="contact-fields-grid">
-                    <label className="contact-field">
-                      <span>Full name *</span>
-                      <input
-                        type="text"
-                        name="name"
-                        autoComplete="name"
-                        placeholder="Your name"
-                        value={form.name}
-                        onChange={handleChange}
-                        required
-                      />
-                    </label>
-
-                    <label className="contact-field">
-                      <span>Email address *</span>
-                      <input
-                        type="email"
-                        name="email"
-                        autoComplete="email"
-                        placeholder="you@example.com"
-                        value={form.email}
-                        onChange={handleChange}
-                        required
-                      />
-                    </label>
-
-                    <label className="contact-field contact-field-full">
-                      <span>Where are you travelling from?</span>
-                      <input
-                        type="text"
-                        name="country"
-                        autoComplete="country-name"
-                        placeholder="Country of residence"
-                        value={form.country}
-                        onChange={handleChange}
-                      />
-                    </label>
-                  </div>
-
-                  <div className="contact-form-divider" />
-
-                  <div className="contact-form-section-title">
-                    <span>02</span>
-                    <h3>Your trip</h3>
-                  </div>
-
-                  <div className="contact-fields-grid">
-                    <label className="contact-field">
-                      <span>Preferred arrival date</span>
-                      <input
-                        type="date"
-                        name="travelDate"
-                        min={new Date().toLocaleDateString("en-CA")}
-                        value={form.travelDate}
-                        onChange={handleChange}
-                      />
-                    </label>
-
-                    <label className="contact-field">
-                      <span>How long would you like to travel?</span>
-                      <select
-                        name="duration"
-                        value={form.duration}
-                        onChange={handleChange}
-                      >
-                        <option value="">Choose trip length</option>
-                        <option value="1–3 days">1–3 days</option>
-                        <option value="4–7 days">4–7 days</option>
-                        <option value="8–12 days">8–12 days</option>
-                        <option value="13+ days">13+ days</option>
-                        <option value="Not sure yet">Not sure yet</option>
-                      </select>
-                    </label>
-
-                    <label className="contact-field">
-                      <span>Number of travellers</span>
-                      <select
-                        name="travellers"
-                        value={form.travellers}
-                        onChange={handleChange}
-                      >
-                        <option value="1">1 traveller</option>
-                        <option value="2">2 travellers</option>
-                        <option value="3">3 travellers</option>
-                        <option value="4">4 travellers</option>
-                        <option value="5–6">5–6 travellers</option>
-                        <option value="7+">7 or more</option>
-                      </select>
-                    </label>
-
-                    <label className="contact-field">
-                      <span>Approximate budget per person</span>
-                      <select
-                        name="budget"
-                        value={form.budget}
-                        onChange={handleChange}
-                      >
-                        <option value="">Prefer to discuss</option>
-                        <option value="Under US$1,000">Under US$1,000</option>
-                        <option value="US$1,000–2,500">US$1,000–2,500</option>
-                        <option value="US$2,500–5,000">US$2,500–5,000</option>
-                        <option value="Over US$5,000">Over US$5,000</option>
-                        <option value="Flexible">Flexible</option>
-                      </select>
-                    </label>
-                  </div>
-
-                  <div className="contact-form-divider" />
-
-                  <div className="contact-form-section-title">
-                    <span>03</span>
-                    <h3>What would you love to experience?</h3>
-                  </div>
-
-                  <p className="contact-field-hint">
-                    Select as many as you like.
-                  </p>
-
-                  <div className="contact-interest-grid">
-                    {interests.map((interest) => (
-                      <label
-                        className={`contact-interest-option ${
-                          form.interests.includes(interest) ? "is-selected" : ""
-                        }`}
-                        key={interest}
-                      >
-                        <input
-                          type="checkbox"
-                          checked={form.interests.includes(interest)}
-                          onChange={() => handleInterestChange(interest)}
-                        />
-                        <span className="contact-interest-check">
-                          <CheckCircle2 size={16} />
-                        </span>
-                        <span>{interest}</span>
-                      </label>
-                    ))}
-                  </div>
-
-                  <div className="contact-form-divider" />
-
-                  <div className="contact-form-section-title">
-                    <span>04</span>
-                    <h3>Tell us a little more</h3>
-                  </div>
+                <div className="contact-fields-grid">
+                  <label className="contact-field">
+                    <span>Full name *</span>
+                    <input
+                      type="text"
+                      name="name"
+                      autoComplete="name"
+                      placeholder="Your name"
+                      value={form.name}
+                      onChange={handleChange}
+                      required
+                    />
+                  </label>
 
                   <label className="contact-field">
-                    <span>
-                      What do you have in mind? Any questions or special
-                      requests?
-                    </span>
-                    <textarea
-                      name="message"
-                      rows="5"
-                      placeholder="Share your ideas, must-see places, accommodation preferences or anything else you'd like us to know..."
-                      value={form.message}
+                    <span>Email address *</span>
+                    <input
+                      type="email"
+                      name="email"
+                      autoComplete="email"
+                      placeholder="you@example.com"
+                      value={form.email}
+                      onChange={handleChange}
+                      required
+                    />
+                  </label>
+
+                  <label className="contact-field contact-field-full">
+                    <span>Where are you travelling from?</span>
+                    <input
+                      type="text"
+                      name="country"
+                      autoComplete="country-name"
+                      placeholder="Country of residence"
+                      value={form.country}
+                      onChange={handleChange}
+                    />
+                  </label>
+                </div>
+
+                <div className="contact-form-divider" />
+
+                <div className="contact-form-section-title">
+                  <span>02</span>
+                  <h3>Your trip</h3>
+                </div>
+
+                <div className="contact-fields-grid">
+                  <label className="contact-field">
+                    <span>Preferred arrival date</span>
+                    <input
+                      type="date"
+                      name="travelDate"
+                      min={new Date().toLocaleDateString("en-CA")}
+                      value={form.travelDate}
                       onChange={handleChange}
                     />
                   </label>
 
-                  <p className="contact-privacy-note">
-                    By submitting, you confirm that the details you provide
-                    may be used to respond to your enquiry. A privacy policy
-                    should be published before this form is used to collect
-                    real customer information.
-                  </p>
+                  <label className="contact-field">
+                    <span>How long would you like to travel?</span>
+                    <select
+                      name="duration"
+                      value={form.duration}
+                      onChange={handleChange}
+                    >
+                      <option value="">Choose trip length</option>
+                      <option value="1–3 days">1–3 days</option>
+                      <option value="4–7 days">4–7 days</option>
+                      <option value="8–12 days">8–12 days</option>
+                      <option value="13+ days">13+ days</option>
+                      <option value="Not sure yet">Not sure yet</option>
+                    </select>
+                  </label>
 
-                  <button className="button button-dark contact-submit" type="submit">
-                    Review enquiry <Send size={16} />
-                  </button>
+                  <label className="contact-field">
+                    <span>Number of travellers</span>
+                    <select
+                      name="travellers"
+                      value={form.travellers}
+                      onChange={handleChange}
+                    >
+                      <option value="1">1 traveller</option>
+                      <option value="2">2 travellers</option>
+                      <option value="3">3 travellers</option>
+                      <option value="4">4 travellers</option>
+                      <option value="5–6">5–6 travellers</option>
+                      <option value="7+">7 or more</option>
+                    </select>
+                  </label>
 
-                  <p className="contact-demo-note">
-                    Demo form only — submission processing still needs to be
-                    connected.
-                  </p>
-                </form>
-              )}
+                  <label className="contact-field">
+                    <span>Approximate budget per person</span>
+                    <select
+                      name="budget"
+                      value={form.budget}
+                      onChange={handleChange}
+                    >
+                      <option value="">Prefer to discuss</option>
+                      <option value="Under US$1,000">Under US$1,000</option>
+                      <option value="US$1,000–2,500">US$1,000–2,500</option>
+                      <option value="US$2,500–5,000">US$2,500–5,000</option>
+                      <option value="Over US$5,000">Over US$5,000</option>
+                      <option value="Flexible">Flexible</option>
+                    </select>
+                  </label>
+                </div>
+
+                <div className="contact-form-divider" />
+
+                <div className="contact-form-section-title">
+                  <span>03</span>
+                  <h3>What would you love to experience?</h3>
+                </div>
+
+                <p className="contact-field-hint">
+                  Select as many as you like.
+                </p>
+
+                <div className="contact-interest-grid">
+                  {interests.map((interest) => (
+                    <label
+                      className={`contact-interest-option ${
+                        form.interests.includes(interest) ? "is-selected" : ""
+                      }`}
+                      key={interest}
+                    >
+                      <input
+                        type="checkbox"
+                        checked={form.interests.includes(interest)}
+                        onChange={() => handleInterestChange(interest)}
+                      />
+                      <span className="contact-interest-check">
+                        <CheckCircle2 size={16} />
+                      </span>
+                      <span>{interest}</span>
+                    </label>
+                  ))}
+                </div>
+
+                <div className="contact-form-divider" />
+
+                <div className="contact-form-section-title">
+                  <span>04</span>
+                  <h3>Tell us a little more</h3>
+                </div>
+
+                <label className="contact-field">
+                  <span>
+                    What do you have in mind? Any questions or special
+                    requests?
+                  </span>
+                  <textarea
+                    name="message"
+                    rows="5"
+                    placeholder="Share your ideas, must-see places, accommodation preferences or anything else you'd like us to know..."
+                    value={form.message}
+                    onChange={handleChange}
+                  />
+                </label>
+
+                <p className="contact-privacy-note">
+                  By continuing, you agree that the details you provide may be
+                  used to respond to your enquiry.
+                </p>
+
+                <button
+                  className="button button-dark contact-submit"
+                  type="submit"
+                >
+                  Send Enquiry on WhatsApp <MessageCircle size={17} />
+                </button>
+
+                <p className="contact-demo-note">
+                  WhatsApp will open with your enquiry ready to send. Please
+                  press Send in WhatsApp to deliver your message.
+                </p>
+              </form>
             </div>
           </div>
         </section>
