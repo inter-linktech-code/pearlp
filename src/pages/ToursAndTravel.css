@@ -1,0 +1,931 @@
+
+/* =========================================================
+   PEARLP SAFARIS — TOURS & TRAVEL SERVICES
+   Premium responsive page styling
+   ========================================================= */
+
+.tours-page {
+  --tours-green: #173b2b;
+  --tours-green-dark: #10291f;
+  --tours-green-deep: #0c2119;
+  --tours-gold: #c7a56a;
+  --tours-gold-light: #e2c99a;
+  --tours-cream: #f8f6f0;
+  --tours-white: #ffffff;
+  --tours-text: #28372f;
+  --tours-muted: #68736c;
+  --tours-border: #e6e5dc;
+
+  color: var(--tours-text);
+  background: var(--tours-white);
+  font-family: inherit;
+  overflow: hidden;
+}
+
+.tours-page *,
+.tours-page *::before,
+.tours-page *::after {
+  box-sizing: border-box;
+}
+
+.tours-page a {
+  text-decoration: none;
+}
+
+.tours-container {
+  width: min(1180px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.tours-section {
+  padding: 104px 0;
+}
+
+.tours-section-label {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 24px;
+  color: var(--tours-green);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.1px;
+  line-height: 1.5;
+}
+
+.tours-section-label > span,
+.tours-eyebrow > span {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 25px;
+  height: 2px;
+  background: var(--tours-gold);
+}
+
+.tours-page h2 {
+  margin: 0;
+  color: var(--tours-green);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(34px, 4vw, 51px);
+  font-weight: 500;
+  letter-spacing: -1.5px;
+  line-height: 1.13;
+}
+
+.tours-page h2 em,
+.tours-page .tours-hero h1 em {
+  color: var(--tours-gold);
+  font-weight: 400;
+}
+
+.tours-page p {
+  line-height: 1.85;
+}
+
+.tours-button {
+  display: inline-flex;
+  min-height: 53px;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  padding: 14px 21px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.35px;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.tours-button:hover {
+  transform: translateY(-2px);
+}
+
+.tours-button-primary {
+  color: var(--tours-green-dark);
+  background: var(--tours-gold);
+  border-color: var(--tours-gold);
+}
+
+.tours-button-primary:hover {
+  color: var(--tours-green-dark);
+  background: var(--tours-gold-light);
+  border-color: var(--tours-gold-light);
+}
+
+.tours-button-outline {
+  color: var(--tours-white);
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.48);
+}
+
+.tours-button-outline:hover {
+  color: var(--tours-green-dark);
+  background: var(--tours-white);
+  border-color: var(--tours-white);
+}
+
+.tours-button-light {
+  color: var(--tours-green-dark);
+  background: var(--tours-white);
+  border-color: var(--tours-white);
+}
+
+.tours-button-light:hover {
+  color: var(--tours-green-dark);
+  background: var(--tours-gold-light);
+  border-color: var(--tours-gold-light);
+}
+
+/* HERO */
+
+.tours-hero {
+  position: relative;
+  display: flex;
+  min-height: 690px;
+  align-items: center;
+  color: var(--tours-white);
+  background-color: var(--tours-green-dark);
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(8, 27, 19, 0.91) 0%,
+      rgba(12, 35, 24, 0.78) 48%,
+      rgba(12, 35, 24, 0.26) 100%
+    ),
+    url("/images/uganda-travel-hero.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.tours-hero-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    0deg,
+    rgba(8, 24, 17, 0.54) 0%,
+    transparent 30%,
+    transparent 75%,
+    rgba(8, 24, 17, 0.14) 100%
+  );
+}
+
+.tours-hero-content {
+  position: relative;
+  z-index: 1;
+  padding-top: 50px;
+  padding-bottom: 90px;
+}
+
+.tours-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+  color: var(--tours-gold-light);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+}
+
+.tours-hero h1 {
+  max-width: 800px;
+  margin: 0;
+  color: var(--tours-white);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(45px, 6.1vw, 78px);
+  font-weight: 500;
+  letter-spacing: -2.5px;
+  line-height: 1.06;
+}
+
+.tours-hero-description {
+  max-width: 600px;
+  margin: 28px 0 30px;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.tours-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+}
+
+.tours-hero-note {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 34px;
+  color: rgba(255, 255, 255, 0.83);
+  font-size: 12px;
+  letter-spacing: 0.3px;
+}
+
+.tours-hero-note svg {
+  color: var(--tours-gold);
+}
+
+.tours-hero-bottom {
+  position: absolute;
+  z-index: 1;
+  right: max(24px, calc((100vw - 1180px) / 2));
+  bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.tours-hero-line {
+  width: 25px;
+  height: 1px;
+  background: var(--tours-gold);
+}
+
+/* INTRO */
+
+.tours-intro {
+  background: var(--tours-cream);
+}
+
+.tours-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  align-items: start;
+  gap: 90px;
+}
+
+.tours-intro-copy {
+  padding-top: 8px;
+}
+
+.tours-intro-copy p {
+  margin: 0 0 18px;
+  color: var(--tours-muted);
+  font-size: 14px;
+}
+
+.tours-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+  color: var(--tours-green);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.tours-text-link svg,
+.tours-card-link svg {
+  transition: transform 0.2s ease;
+}
+
+.tours-text-link:hover svg,
+.tours-card-link:hover svg {
+  transform: translateX(4px);
+}
+
+/* SERVICE CARDS */
+
+.tours-services {
+  background: var(--tours-white);
+}
+
+.tours-section-heading {
+  max-width: 650px;
+  margin: 0 auto 49px;
+  text-align: center;
+}
+
+.tours-section-heading .tours-section-label {
+  justify-content: center;
+}
+
+.tours-section-heading > p {
+  max-width: 540px;
+  margin: 20px auto 0;
+  color: var(--tours-muted);
+  font-size: 14px;
+}
+
+.tours-service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 19px;
+}
+
+.tours-service-card {
+  display: flex;
+  min-height: 315px;
+  flex-direction: column;
+  padding: 29px 26px 25px;
+  border: 1px solid var(--tours-border);
+  background: var(--tours-white);
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.tours-service-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--tours-gold);
+  box-shadow: 0 15px 38px rgba(23, 59, 43, 0.08);
+}
+
+.tours-service-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.tours-service-icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  color: var(--tours-green);
+  background: var(--tours-cream);
+  border: 1px solid #e9e4d6;
+}
+
+.tours-service-number {
+  color: #b7b8ae;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 23px;
+}
+
+.tours-service-card h3 {
+  margin: 0 0 13px;
+  color: var(--tours-green);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.tours-service-card p {
+  flex: 1;
+  margin: 0 0 22px;
+  color: var(--tours-muted);
+  font-size: 12.5px;
+  line-height: 1.85;
+}
+
+.tours-card-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 17px;
+  border-top: 1px solid var(--tours-border);
+  color: var(--tours-green);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* EXPERIENCE / BENEFITS */
+
+.tours-experience {
+  padding: 96px 0;
+  color: var(--tours-white);
+  background: var(--tours-green);
+}
+
+.tours-experience-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1fr;
+  align-items: center;
+  gap: 90px;
+}
+
+.tours-label-light {
+  color: var(--tours-gold-light);
+}
+
+.tours-experience-copy h2 {
+  color: var(--tours-white);
+}
+
+.tours-experience-copy > p {
+  max-width: 490px;
+  margin: 23px 0 28px;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 14px;
+}
+
+.tours-benefits {
+  display: grid;
+  gap: 0;
+}
+
+.tours-benefit {
+  display: grid;
+  grid-template-columns: 47px 1fr;
+  gap: 18px;
+  padding: 23px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.tours-benefit:first-child {
+  padding-top: 0;
+}
+
+.tours-benefit:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.tours-benefit-icon {
+  display: grid;
+  width: 45px;
+  height: 45px;
+  place-items: center;
+  color: var(--tours-gold-light);
+  border: 1px solid rgba(226, 201, 154, 0.43);
+}
+
+.tours-benefit h3 {
+  margin: 0 0 6px;
+  color: var(--tours-white);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.tours-benefit p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* BOOKING PROCESS */
+
+.tours-process {
+  background: var(--tours-cream);
+}
+
+.tours-process-heading {
+  margin-bottom: 57px;
+}
+
+.tours-process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.tours-process-step {
+  position: relative;
+}
+
+.tours-process-number {
+  color: var(--tours-gold);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 35px;
+}
+
+.tours-process-rule {
+  width: 100%;
+  height: 1px;
+  margin: 19px 0 22px;
+  background: #d9d8ce;
+}
+
+.tours-process-rule::before {
+  display: block;
+  width: 35px;
+  height: 2px;
+  content: "";
+  background: var(--tours-green);
+}
+
+.tours-process-step h3 {
+  margin: 0 0 11px;
+  color: var(--tours-green);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.tours-process-step p {
+  margin: 0;
+  color: var(--tours-muted);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+/* DESTINATIONS */
+
+.tours-destinations {
+  background: var(--tours-white);
+}
+
+.tours-destinations-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1fr;
+  align-items: center;
+  gap: 90px;
+}
+
+.tours-destinations-grid > div:first-child > p {
+  max-width: 470px;
+  margin: 23px 0 0;
+  color: var(--tours-muted);
+  font-size: 14px;
+}
+
+.tours-destination-links {
+  border-top: 1px solid var(--tours-border);
+}
+
+.tours-destination-links > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 22px 4px;
+  border-bottom: 1px solid var(--tours-border);
+  color: var(--tours-green);
+  transition:
+    padding 0.2s ease,
+    color 0.2s ease;
+}
+
+.tours-destination-links > a:hover {
+  padding-inline: 12px;
+  color: #947342;
+}
+
+.tours-destination-links > a > span {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+}
+
+.tours-destination-links > a > span svg {
+  color: var(--tours-gold);
+}
+
+/* FAQ */
+
+.tours-faq {
+  background: var(--tours-cream);
+}
+
+.tours-faq-grid {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  align-items: start;
+  gap: 90px;
+}
+
+.tours-faq-intro > p {
+  margin: 22px 0;
+  color: var(--tours-muted);
+  font-size: 13px;
+}
+
+.tours-faq-list {
+  border-top: 1px solid #deded3;
+}
+
+.tours-faq-list details {
+  border-bottom: 1px solid #deded3;
+}
+
+.tours-faq-list summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 23px 0;
+  color: var(--tours-green);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  line-height: 1.5;
+  list-style: none;
+  cursor: pointer;
+}
+
+.tours-faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.tours-faq-list summary > span {
+  flex: 0 0 auto;
+  color: var(--tours-gold);
+  font-family: Arial, sans-serif;
+  font-size: 25px;
+  transition: transform 0.2s ease;
+}
+
+.tours-faq-list details[open] summary > span {
+  transform: rotate(45deg);
+}
+
+.tours-faq-list details > p {
+  margin: -4px 35px 23px 0;
+  color: var(--tours-muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+/* FINAL CTA */
+
+.tours-final-cta {
+  padding: 83px 0;
+  color: var(--tours-white);
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(199, 165, 106, 0.12),
+      transparent 32%
+    ),
+    var(--tours-green-dark);
+}
+
+.tours-final-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.tours-final-cta h2 {
+  color: var(--tours-white);
+}
+
+.tours-final-cta-inner > div:first-child > p {
+  max-width: 560px;
+  margin: 20px 0 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 13px;
+}
+
+.tours-final-actions {
+  display: flex;
+  min-width: 230px;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+}
+
+.tours-final-actions .tours-button {
+  white-space: nowrap;
+}
+
+.tours-response-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 10px;
+}
+
+.tours-response-note svg {
+  color: var(--tours-gold-light);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+  .tours-section {
+    padding: 82px 0;
+  }
+
+  .tours-intro-grid,
+  .tours-experience-grid,
+  .tours-destinations-grid,
+  .tours-faq-grid {
+    gap: 48px;
+  }
+
+  .tours-service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tours-process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 38px;
+  }
+
+  .tours-final-cta-inner {
+    gap: 35px;
+  }
+}
+
+@media (max-width: 700px) {
+  .tours-container {
+    width: min(100% - 36px, 560px);
+  }
+
+  .tours-section {
+    padding: 68px 0;
+  }
+
+  .tours-page h2 {
+    font-size: clamp(32px, 8vw, 43px);
+    letter-spacing: -1px;
+  }
+
+  .tours-hero {
+    min-height: 640px;
+    align-items: center;
+    background-position: center;
+  }
+
+  .tours-hero-content {
+    padding-top: 72px;
+    padding-bottom: 100px;
+  }
+
+  .tours-eyebrow {
+    font-size: 9px;
+    letter-spacing: 1.8px;
+  }
+
+  .tours-hero h1 {
+    font-size: clamp(42px, 11vw, 60px);
+    letter-spacing: -1.7px;
+  }
+
+  .tours-hero-description {
+    margin-top: 23px;
+    font-size: 13px;
+    line-height: 1.85;
+  }
+
+  .tours-hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .tours-hero-actions .tours-button {
+    width: 100%;
+  }
+
+  .tours-hero-bottom {
+    right: 18px;
+    bottom: 19px;
+    left: 18px;
+    justify-content: center;
+    gap: 8px;
+    font-size: 8px;
+    letter-spacing: 1.2px;
+  }
+
+  .tours-hero-line {
+    width: 14px;
+  }
+
+  .tours-intro-grid,
+  .tours-experience-grid,
+  .tours-destinations-grid,
+  .tours-faq-grid {
+    grid-template-columns: 1fr;
+    gap: 33px;
+  }
+
+  .tours-section-heading {
+    margin-bottom: 35px;
+    text-align: left;
+  }
+
+  .tours-section-heading .tours-section-label {
+    justify-content: flex-start;
+  }
+
+  .tours-section-heading > p {
+    margin-inline: 0;
+  }
+
+  .tours-service-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .tours-service-card {
+    min-height: auto;
+    padding: 24px 22px;
+  }
+
+  .tours-service-card h3 {
+    font-size: 22px;
+  }
+
+  .tours-service-card p {
+    font-size: 13px;
+  }
+
+  .tours-experience {
+    padding: 70px 0;
+  }
+
+  .tours-benefit:first-child {
+    padding-top: 12px;
+  }
+
+  .tours-process-grid {
+    grid-template-columns: 1fr;
+    gap: 29px;
+  }
+
+  .tours-process-step {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    column-gap: 17px;
+    align-items: start;
+  }
+
+  .tours-process-number {
+    grid-row: span 3;
+    font-size: 30px;
+  }
+
+  .tours-process-rule {
+    margin: 15px 0 17px;
+  }
+
+  .tours-process-step h3 {
+    margin-bottom: 8px;
+    font-size: 19px;
+  }
+
+  .tours-process-step p {
+    font-size: 12px;
+  }
+
+  .tours-destination-links > a > span {
+    font-size: 17px;
+  }
+
+  .tours-faq-list summary {
+    font-size: 16px;
+  }
+
+  .tours-final-cta {
+    padding: 66px 0;
+  }
+
+  .tours-final-cta-inner {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .tours-final-actions {
+    width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
+  .tours-container {
+    width: calc(100% - 28px);
+  }
+
+  .tours-hero h1 {
+    font-size: 39px;
+  }
+
+  .tours-hero-bottom {
+    letter-spacing: 0.8px;
+  }
+
+  .tours-hero-line {
+    width: 9px;
+  }
+
+  .tours-service-card {
+    padding: 22px 18px;
+  }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+  .tours-page *,
+  .tours-page *::before,
+  .tours-page *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

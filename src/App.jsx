@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
@@ -23,6 +22,14 @@ import TravelGuide from "./pages/TravelGuide";
 import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import ToursAndTravel from "./pages/ToursAndTravel";
+import AirportDeliveries from "./pages/AirportDeliveries";
+import LongDistanceTransfers from "./pages/LongDistanceTransfers";
+import CityTours from "./pages/CityTours";
+import HotelBooking from "./pages/HotelBooking";
+import DriverHiring from "./pages/DriverHiring";
+import SpecialDeliveries from "./pages/SpecialDeliveries";
+import PickAndDrop from "./pages/PickAndDrop";
 
 const plannedPages = [
   {
@@ -86,6 +93,28 @@ export default function App() {
           <Route path="/uganda-safari-lodges" element={<SafariLodges />} />
 
           <Route path="/travel-guide" element={<TravelGuide />} />
+
+          {/* Tours & Travel Services */}
+          <Route
+            path="/tours-and-travel-services"
+            element={<ToursAndTravel />}
+          />
+
+          <Route 
+          path="/airport-deliveries"
+          element={<AirportDeliveries />} 
+          />
+          <Route
+            path="/long-distance-transfers"
+            element={<LongDistanceTransfers />}
+          />
+          <Route path="/city-tours" element={<CityTours />} />
+
+          <Route path="/hotel-booking" element={<HotelBooking />} />
+
+          <Route path="/driver-hiring" element={<DriverHiring />} />
+          <Route path="/special-deliveries" element={<SpecialDeliveries />} />
+          <Route path="/pick-and-drop" element={<PickAndDrop />} />
 
           <Route path="/about-us" element={<AboutUs />} />
 

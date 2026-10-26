@@ -1,235 +1,680 @@
+
+/* =========================================================
+   PEARLP SAFARIS — RESPONSIVE NAVIGATION
+   Desktop • Tablet • Mobile
+   Works with the current Navbar.jsx
+   ========================================================= */
+
+:root {
+  --nav-forest: #173b2b;
+  --nav-forest-dark: #102b1f;
+  --nav-forest-light: #244c38;
+  --nav-cream: #faf8f2;
+  --nav-white: #fffefa;
+  --nav-gold: #b99a5c;
+  --nav-gold-light: #d8c49a;
+  --nav-text: #263b30;
+  --nav-muted: #748076;
+  --nav-border: rgba(23, 59, 43, 0.12);
+  --nav-gutter: 5.5%;
+  --nav-header-height: 92px;
+  --nav-layer: 1000;
+}
+
+/* =========================================================
+   HEADER AND LOGO
+   ========================================================= */
+
 .site-header {
   position: sticky;
-  z-index: 1000;
   top: 0;
+  z-index: var(--nav-layer);
   width: 100%;
-  border-bottom: 1px solid rgb(23 59 43 / 8%);
-  background: rgb(250 248 242 / 96%);
-  backdrop-filter: blur(14px);
+  background: rgba(250, 248, 242, 0.97);
+  border-bottom: 1px solid rgba(23, 59, 43, 0.09);
+  isolation: isolate;
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 1680px;
+  margin: 0 auto;
+  padding: 0 var(--nav-gutter);
 }
 
 .nav-shell {
+  position: relative;
   display: flex;
-  min-height: 88px;
   align-items: center;
   justify-content: space-between;
-  gap: 28px;
+  gap: 30px;
+  min-width: 0;
+  min-height: var(--nav-header-height);
 }
 
-.brand {
+.brand-link {
   display: inline-flex;
-  flex-shrink: 0;
+  flex: 0 0 auto;
   align-items: center;
-  gap: 12px;
-}
-
-.brand-mark {
-  display: grid;
-  width: 43px;
-  height: 43px;
-  place-items: center;
-  border: 1px solid var(--color-gold);
-  color: var(--color-forest);
-  font-family: var(--font-heading);
-  font-size: 1.8rem;
-  font-weight: 600;
-}
-
-.brand-copy {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.2;
-}
-
-.brand-name {
-  color: var(--color-forest);
-  font-family: var(--font-heading);
-  font-size: 1.7rem;
-  font-weight: 600;
-  letter-spacing: -0.04em;
-}
-
-.brand-tagline {
-  margin-top: 5px;
-  color: #8a806d;
-  font-size: 0.52rem;
-  font-weight: 700;
-  letter-spacing: 0.17em;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: clamp(14px, 1.7vw, 27px);
-}
-
-.nav-link {
-  position: relative;
-  padding-block: 8px;
-  color: #4f5d53;
-  font-size: 0.73rem;
-  font-weight: 600;
-  transition: color 180ms ease;
-}
-
-.nav-link::after {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 1px;
-  background: var(--color-gold);
-  content: "";
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 180ms ease;
-}
-
-.nav-link:hover,
-.nav-link-active {
-  color: var(--color-forest);
-}
-
-.nav-link:hover::after,
-.nav-link-active::after {
-  transform: scaleX(1);
-}
-
-.nav-cta {
-  display: inline-flex;
-  min-height: 44px;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
-  padding: 12px 15px;
-  color: var(--color-white);
-  background: var(--color-forest);
-  font-size: 0.69rem;
-  font-weight: 700;
-  transition: background 180ms ease;
-}
-
-.nav-cta:hover {
-  background: var(--color-forest-light);
-}
-
-.menu-toggle {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 8px;
-  border: 0;
-  color: var(--color-forest);
-  background: transparent;
-}
-
-@media (max-width: 1050px) {
-  .nav-shell {
-    min-height: 78px;
-  }
-
-  .nav-links {
-    gap: 14px;
-  }
-
-  .nav-link {
-    font-size: 0.68rem;
-  }
-
-  .nav-cta {
-    padding-inline: 12px;
-    font-size: 0.64rem;
-  }
-}
-
-@media (max-width: 850px) {
-  .nav-shell {
-    position: relative;
-  }
-
-  .menu-toggle {
-    display: inline-flex;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: calc(100% + 1px);
-    right: calc(var(--page-gutter) * -1);
-    left: calc(var(--page-gutter) * -1);
-    display: none;
-    align-items: stretch;
-    gap: 0;
-    padding: 12px var(--page-gutter) 22px;
-    border-bottom: 1px solid var(--color-border);
-    background: var(--color-ivory);
-    box-shadow: 0 15px 25px rgb(16 43 32 / 8%);
-  }
-
-  .nav-links-open {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .nav-link {
-    padding: 13px 0;
-    border-bottom: 1px solid var(--color-border);
-    font-size: 0.85rem;
-  }
-
-  .nav-link::after {
-    display: none;
-  }
-
-  .nav-cta {
-    align-self: flex-start;
-    margin-top: 17px;
-    padding: 14px 18px;
-    font-size: 0.75rem;
-  }
-}
-
-@media (max-width: 420px) {
-  .brand-mark {
-    width: 39px;
-    height: 39px;
-  }
-
-  .brand-name {
-    font-size: 1.5rem;
-  }
-
-  .brand-tagline {
-    font-size: 0.45rem;
-  }
-}
-
-.brand {
-  display: inline-flex;
-  align-items: center;
-  flex-shrink: 0;
+  max-width: 35%;
   text-decoration: none;
 }
 
 .brand-logo {
   display: block;
   width: auto;
-  height: 58px;
-  max-width: 220px;
+  height: 59px;
+  max-width: 225px;
   object-fit: contain;
   object-position: left center;
 }
 
-@media (max-width: 768px) {
-  .brand-logo {
-    height: 48px;
-    max-width: 175px;
+.menu-toggle {
+  display: none;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  padding: 0;
+  color: var(--nav-forest);
+  background: transparent;
+  border: 1px solid var(--nav-border);
+  border-radius: 50%;
+  cursor: pointer;
+  transition:
+    color 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease;
+}
+
+.menu-toggle:hover {
+  color: white;
+  background: var(--nav-forest);
+  border-color: var(--nav-forest);
+}
+
+/* =========================================================
+   MAIN NAVIGATION
+   ========================================================= */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(14px, 1.55vw, 25px);
+  min-width: 0;
+}
+
+.nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 46px;
+  padding: 10px 0;
+  color: var(--nav-text);
+  background: transparent;
+  border: 0;
+  font-family: inherit;
+  font-size: 0.83rem;
+  font-weight: 550;
+  line-height: 1.4;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 180ms ease;
+}
+
+.nav-link::after {
+  position: absolute;
+  right: 0;
+  bottom: 3px;
+  left: 0;
+  height: 2px;
+  background: var(--nav-gold);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 200ms ease;
+}
+
+.nav-link:hover,
+.nav-link-active,
+.nav-dropdown-active > .nav-dropdown-toggle {
+  color: var(--nav-forest);
+}
+
+.nav-link:hover::after,
+.nav-link-active::after,
+.nav-dropdown-active > .nav-dropdown-toggle::after {
+  transform: scaleX(1);
+}
+
+.nav-link:focus-visible,
+.nav-dropdown-item:focus-visible,
+.nav-cta:focus-visible,
+.menu-toggle:focus-visible {
+  outline: 2px solid var(--nav-gold);
+  outline-offset: 4px;
+}
+
+.nav-dropdown-toggle {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.nav-dropdown-chevron {
+  flex: 0 0 auto;
+  color: currentColor;
+  transition: transform 200ms ease;
+}
+
+.nav-dropdown-open > .nav-dropdown-toggle .nav-dropdown-chevron {
+  transform: rotate(180deg);
+}
+
+/* =========================================================
+   DROPDOWN BASE
+   Both Safaris and Services use these same rules.
+   ========================================================= */
+
+.nav-dropdown {
+  position: relative;
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  min-width: 0;
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  z-index: calc(var(--nav-layer) + 10);
+  display: block;
+  width: 310px;
+  max-width: min(350px, 90vw);
+  max-height: min(75vh, 660px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 10px;
+  color: var(--nav-text);
+  background: var(--nav-white);
+  border: 1px solid rgba(23, 59, 43, 0.1);
+  border-radius: 4px;
+  box-shadow: 0 20px 55px rgba(16, 43, 32, 0.16);
+
+  /* Hidden by default on every device. */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translate(-50%, 8px);
+
+  transition:
+    opacity 180ms ease,
+    visibility 180ms ease,
+    transform 180ms ease;
+}
+
+/*
+  IMPORTANT:
+  React state is the only mechanism that opens the menu.
+  Do not add :hover or :focus-within opening selectors here.
+*/
+.nav-dropdown.nav-dropdown-open > .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+
+/* Dropdown heading */
+
+.nav-dropdown-heading {
+  position: relative;
+  padding: 15px 14px 16px;
+  background: rgba(23, 59, 43, 0.045);
+  border-bottom: 1px solid rgba(23, 59, 43, 0.09);
+}
+
+.nav-dropdown-eyebrow {
+  display: block;
+  margin-bottom: 7px;
+  color: #8a7549;
+  font-size: 0.62rem;
+  font-weight: 750;
+  letter-spacing: 0.13em;
+  line-height: 1.5;
+}
+
+.nav-dropdown-heading p {
+  margin: 0;
+  color: var(--nav-forest);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.08rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Dropdown items */
+
+.nav-dropdown-list {
+  display: flex;
+  flex-direction: column;
+  padding-top: 5px;
+}
+
+.nav-dropdown-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 44px;
+  padding: 11px 13px;
+  color: #435247;
+  background: transparent;
+  border-bottom: 1px solid rgba(23, 59, 43, 0.06);
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.45;
+  text-decoration: none;
+  transition:
+    color 160ms ease,
+    background 160ms ease,
+    padding 160ms ease;
+}
+
+.nav-dropdown-item:last-child {
+  border-bottom: 0;
+}
+
+.nav-dropdown-item:hover,
+.nav-dropdown-item:focus-visible,
+.nav-dropdown-item-active {
+  padding-left: 17px;
+  color: var(--nav-forest);
+  background: rgba(23, 59, 43, 0.055);
+}
+
+.nav-dropdown-item-icon {
+  flex: 0 0 auto;
+  color: var(--nav-gold);
+  opacity: 0;
+  transform: translate(-3px, 3px);
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
+}
+
+.nav-dropdown-item:hover .nav-dropdown-item-icon,
+.nav-dropdown-item:focus-visible .nav-dropdown-item-icon,
+.nav-dropdown-item-active .nav-dropdown-item-icon {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* =========================================================
+   PLAN YOUR TRIP BUTTON
+   ========================================================= */
+
+.nav-cta {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  min-height: 47px;
+  padding: 0 18px;
+  color: #fffdf7;
+  background: var(--nav-forest);
+  border: 1px solid var(--nav-forest);
+  border-radius: 2px;
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.015em;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.nav-cta:hover {
+  background: var(--nav-forest-dark);
+  border-color: var(--nav-forest-dark);
+  transform: translateY(-1px);
+}
+
+.nav-cta svg {
+  flex: 0 0 auto;
+  color: var(--nav-gold-light);
+  transition: transform 180ms ease;
+}
+
+.nav-cta:hover svg {
+  transform: translate(2px, -2px);
+}
+
+/* =========================================================
+   DESKTOP DROPDOWN BEHAVIOR
+   ========================================================= */
+
+@media (min-width: 1101px) {
+  .nav-dropdown {
+    align-self: stretch;
+  }
+
+  .nav-dropdown-menu {
+    /*
+      The menu opens below the trigger without a gap that
+      would cause accidental mouseleave while moving into it.
+    */
+    top: calc(100% - 1px);
+    left: 50%;
+  }
+
+  .nav-dropdown-heading {
+    border-radius: 2px 2px 0 0;
+  }
+
+  .nav-dropdown-item {
+    min-height: 44px;
   }
 }
 
-@media (max-width: 380px) {
+/* =========================================================
+   TABLET AND MOBILE
+   Breakpoint matches the Navbar.jsx desktop check:
+   min-width 1101px = desktop.
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  :root {
+    --nav-header-height: 78px;
+    --nav-gutter: 5%;
+  }
+
+  .nav-shell {
+    gap: 18px;
+  }
+
+  .brand-link {
+    max-width: calc(100% - 65px);
+  }
+
   .brand-logo {
+    height: 51px;
+    max-width: 190px;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  /* Collapsible main navigation panel */
+
+  .nav-links {
+    position: absolute;
+    top: calc(100% + 1px);
+    right: calc(var(--nav-gutter) * -1);
+    left: calc(var(--nav-gutter) * -1);
+    display: none;
+    width: auto;
+    max-height: calc(100dvh - var(--nav-header-height) - 1px);
+    flex: initial;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 12px var(--nav-gutter) 24px;
+    background: var(--nav-cream);
+    border-top: 1px solid rgba(23, 59, 43, 0.07);
+    border-bottom: 1px solid rgba(23, 59, 43, 0.12);
+    box-shadow: 0 20px 35px rgba(16, 43, 32, 0.12);
+  }
+
+  .nav-links.nav-links-open {
+    display: flex;
+  }
+
+  /* Top-level navigation links */
+
+  .nav-links > .nav-link,
+  .nav-links > .nav-dropdown > .nav-link {
+    display: flex;
+    width: 100%;
+    min-height: 49px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 0;
+    border-bottom: 1px solid rgba(23, 59, 43, 0.09);
+    font-size: 0.88rem;
+    text-align: left;
+    white-space: normal;
+  }
+
+  .nav-links > .nav-link::after,
+  .nav-links > .nav-dropdown > .nav-link::after {
+    display: none;
+  }
+
+  /* Dropdown wrappers */
+
+  .nav-links > .nav-dropdown {
+    display: flex;
+    width: 100%;
+    flex: 0 0 auto;
+    flex-direction: column;
+    align-items: stretch;
+    align-self: auto;
+  }
+
+  .nav-dropdown-toggle {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /*
+    Mobile dropdowns use max-height for expansion.
+    Visibility is also controlled by the React open class.
+  */
+
+  .nav-links .nav-dropdown > .nav-dropdown-menu {
+    position: static;
+    display: block;
+    width: 100%;
+    max-width: none;
+    max-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0 9px;
+    background: rgba(23, 59, 43, 0.035);
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: none;
+
+    transition:
+      max-height 280ms ease,
+      padding 280ms ease,
+      opacity 180ms ease,
+      visibility 180ms ease;
+  }
+
+  /*
+    Safaris and Services both open through the same class.
+    The larger height accommodates the eight Services links.
+  */
+
+  .nav-links
+    .nav-dropdown.nav-dropdown-open
+    > .nav-dropdown-menu {
+    max-height: 700px;
+    padding: 9px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
+  }
+
+  .nav-dropdown-menu::before {
+    display: none;
+  }
+
+  .nav-dropdown-heading {
+    padding: 13px 14px;
+  }
+
+  .nav-dropdown-heading p {
+    font-size: 1rem;
+  }
+
+  .nav-dropdown-eyebrow {
+    font-size: 0.61rem;
+  }
+
+  .nav-dropdown-list {
+    padding-top: 3px;
+  }
+
+  .nav-dropdown-item {
+    min-height: 45px;
+    padding: 11px 12px;
+    font-size: 0.85rem;
+  }
+
+  .nav-dropdown-item:hover,
+  .nav-dropdown-item:focus-visible,
+  .nav-dropdown-item-active {
+    padding-left: 16px;
+  }
+
+  .nav-dropdown-item-icon {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Main call to action */
+
+  .nav-links > .nav-cta {
+    align-self: flex-start;
+    justify-content: center;
+    margin-top: 17px;
+    min-height: 47px;
+    padding: 0 19px;
+    font-size: 0.81rem;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+  :root {
+    --nav-header-height: 72px;
+    --nav-gutter: 5%;
+  }
+
+  .nav-shell {
+    gap: 12px;
+  }
+
+  .brand-logo {
+    height: 46px;
+    max-width: min(175px, 58vw);
+  }
+
+  .menu-toggle {
+    width: 42px;
     height: 42px;
-    max-width: 150px;
+  }
+
+  .nav-links {
+    max-height: calc(100dvh - var(--nav-header-height) - 1px);
+  }
+
+  .nav-links > .nav-link,
+  .nav-links > .nav-dropdown > .nav-link {
+    min-height: 47px;
+    font-size: 0.86rem;
+  }
+
+  .nav-dropdown-heading {
+    padding: 12px;
+  }
+
+  .nav-dropdown-item {
+    min-height: 44px;
+    padding: 11px 10px;
+    font-size: 0.82rem;
+  }
+
+  .nav-cta {
+    max-width: 100%;
+  }
+}
+
+/* =========================================================
+   EXTRA SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 360px) {
+  :root {
+    --nav-gutter: 4%;
+  }
+
+  .nav-shell {
+    gap: 8px;
+  }
+
+  .brand-logo {
+    height: 41px;
+    max-width: 145px;
+  }
+
+  .menu-toggle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav-dropdown-heading {
+    padding: 11px;
+  }
+
+  .nav-dropdown-item {
+    padding-right: 8px;
+    padding-left: 9px;
+    font-size: 0.8rem;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-link,
+  .nav-link::after,
+  .nav-dropdown-chevron,
+  .nav-dropdown-menu,
+  .nav-dropdown-item,
+  .nav-dropdown-item-icon,
+  .nav-cta,
+  .nav-cta svg,
+  .menu-toggle {
+    transition: none;
   }
 }

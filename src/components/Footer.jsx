@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import {
-  ArrowDownRight,
   ArrowRight,
   ArrowUpRight,
   MapPin,
   MoveUpRight,
 } from "lucide-react";
+import logo from "../assets/logo.png";
 import "./Footer.css";
 
 function InstagramIcon() {
@@ -67,9 +67,13 @@ const exploreLinks = [
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
+  const backToTop = (event) => {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <footer className="site-footer">
-      {/* Pre-footer statement */}
       <div className="footer-prelude">
         <div className="page-container footer-prelude-inner">
           <span className="footer-prelude-line" />
@@ -86,7 +90,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Main footer */}
       <div className="footer-main page-container">
         <div className="footer-brand">
           <Link
@@ -96,11 +99,12 @@ export default function Footer() {
           >
             <span className="footer-logo-frame">
               <img
-                src="/webicon.png"
-                alt=""
+                src={logo}
+                alt="PearlP Safaris logo"
                 className="footer-logo"
                 width="56"
                 height="56"
+                loading="lazy"
               />
             </span>
 
@@ -116,7 +120,7 @@ export default function Footer() {
           </Link>
 
           <p className="footer-brand-description">
-            Thoughtfully planned journeys through Uganda's extraordinary
+            Thoughtfully planned journeys through Uganda&apos;s extraordinary
             landscapes, remarkable wildlife and rich cultural heritage.
             Discover Africa at your own pace.
           </p>
@@ -126,18 +130,18 @@ export default function Footer() {
               <MapPin size={16} strokeWidth={1.5} />
             </span>
 
-            <span>
+            <span className="footer-location-copy">
               <strong>Based in Uganda</strong>
               <small>Exploring the Pearl of Africa</small>
             </span>
           </div>
 
-          <div className="footer-socials">
+          <div className="footer-socials" aria-label="Social media">
             <a
               href="https://www.instagram.com/"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Visit Instagram"
+              aria-label="Instagram"
             >
               <InstagramIcon />
             </a>
@@ -146,7 +150,7 @@ export default function Footer() {
               href="https://www.facebook.com/"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Visit Facebook"
+              aria-label="Facebook"
             >
               <FacebookIcon />
             </a>
@@ -194,14 +198,13 @@ export default function Footer() {
           </div>
         </nav>
 
-        {/* Enquiry panel */}
         <div className="footer-cta">
           <div className="footer-cta-top">
             <span className="footer-cta-kicker">
               YOUR NEXT CHAPTER
             </span>
 
-            <span className="footer-cta-icon">
+            <span className="footer-cta-icon" aria-hidden="true">
               <MoveUpRight size={20} strokeWidth={1.4} />
             </span>
           </div>
@@ -221,7 +224,7 @@ export default function Footer() {
           </h2>
 
           <p>
-            Tell us what moves you. We'll help you explore the possibilities
+            Tell us what moves you. We&apos;ll help you explore the possibilities
             and start shaping a journey worth remembering.
           </p>
 
@@ -238,7 +241,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom bar */}
       <div className="footer-bottom">
         <div className="page-container footer-bottom-inner">
           <p className="footer-copyright">
@@ -248,11 +250,15 @@ export default function Footer() {
 
           <div className="footer-legal-links">
             <Link to="/privacy-policy">Privacy Policy</Link>
-            <span className="footer-legal-divider" />
+            <span className="footer-legal-divider" aria-hidden="true" />
             <Link to="/terms">Terms &amp; Conditions</Link>
           </div>
 
-          <a href="#root" className="footer-back-to-top">
+          <a
+            href="#top"
+            className="footer-back-to-top"
+            onClick={backToTop}
+          >
             <span>BACK TO TOP</span>
             <ArrowUpRight size={14} />
           </a>
@@ -261,7 +267,7 @@ export default function Footer() {
             <span>DESIGNED &amp; DEVELOPED BY</span>
 
             <a
-              href="https://inter-linktech.com"
+              href="https://inter-linktech.com/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="INTER-LINK TECH website, opens in a new tab"
