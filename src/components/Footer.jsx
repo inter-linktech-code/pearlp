@@ -5,6 +5,8 @@ import {
   ArrowUpRight,
   MapPin,
   MoveUpRight,
+  Phone,
+  MessageCircle,
 } from "lucide-react";
 import logo from "../assets/logo.png";
 import "./Footer.css";
@@ -132,8 +134,38 @@ export default function Footer() {
 
             <span className="footer-location-copy">
               <strong>Based in Uganda</strong>
-              <small>Exploring the Pearl of Africa</small>
+              <small>Ggaba Road, Bunga, Ivory Mall</small>
             </span>
+          </div>
+
+          <div className="footer-contact-details">
+            <a
+              href="https://wa.me/256789842436"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-contact-link"
+              aria-label="Chat with PearlP Safaris on WhatsApp"
+            >
+              <MessageCircle size={16} strokeWidth={1.6} />
+              <span>
+                <small>WHATSAPP</small>
+                <strong>+256 789 842 436</strong>
+              </span>
+              <ArrowUpRight size={14} />
+            </a>
+
+            <a
+              href="tel:+256702765380"
+              className="footer-contact-link"
+              aria-label="Call PearlP Safaris"
+            >
+              <Phone size={16} strokeWidth={1.6} />
+              <span>
+                <small>CALL OUR TEAM</small>
+                <strong>+256 702 765 380</strong>
+              </span>
+              <ArrowUpRight size={14} />
+            </a>
           </div>
 
           <div className="footer-socials" aria-label="Social media">
@@ -200,9 +232,7 @@ export default function Footer() {
 
         <div className="footer-cta">
           <div className="footer-cta-top">
-            <span className="footer-cta-kicker">
-              YOUR NEXT CHAPTER
-            </span>
+            <span className="footer-cta-kicker">YOUR NEXT CHAPTER</span>
 
             <span className="footer-cta-icon" aria-hidden="true">
               <MoveUpRight size={20} strokeWidth={1.4} />
@@ -281,3 +311,4 @@ export default function Footer() {
     </footer>
   );
 }
+

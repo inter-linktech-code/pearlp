@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
@@ -9,11 +8,12 @@ import {
   Clock3,
   Compass,
   MessageCircle,
-  Send,
+  Phone,
 } from "lucide-react";
 import "./Contact.css";
 
 const WHATSAPP_NUMBER = "256789842436";
+const PHONE_NUMBER = "+256702765380";
 
 const interests = [
   "Gorilla trekking",
@@ -76,7 +76,9 @@ export default function Contact() {
       `Travelling from: ${form.country.trim() || "Not specified"}`,
       "",
       "TRIP DETAILS",
-      `Preferred arrival date: ${form.travelDate || "Flexible / not specified"}`,
+      `Preferred arrival date: ${
+        form.travelDate || "Flexible / not specified"
+      }`,
       `Trip duration: ${form.duration || "Not specified"}`,
       `Number of travellers: ${form.travellers}`,
       `Budget per person: ${form.budget || "Prefer to discuss"}`,
@@ -231,6 +233,38 @@ export default function Contact() {
                     so permit requirements can be part of the planning.
                   </span>
                 </p>
+              </div>
+
+              <div className="contact-direct-contact">
+                <span className="eyebrow-dark">CONTACT OUR TEAM DIRECTLY</span>
+
+                <a
+                  href={`https://wa.me/${WHATSAPP_NUMBER}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-direct-link"
+                >
+                  <MessageCircle size={19} />
+                  <span>
+                    <small>WHATSAPP</small>
+                    <strong>+256 789 842 436</strong>
+                  </span>
+                  <ArrowRight size={16} />
+                </a>
+
+                <a
+                  href={`tel:${PHONE_NUMBER}`}
+                  className="contact-direct-link"
+                >
+                  <Phone size={19} />
+                  <span>
+                    <small>CALL US</small>
+                    <strong>+256 702 765 380</strong>
+                  </span>
+                  <ArrowRight size={16} />
+                </a>
+
+                <p>Ggaba Road, Bunga, Ivory Mall, Uganda</p>
               </div>
 
               <div className="contact-explore-links">
